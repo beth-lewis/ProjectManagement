@@ -3,3 +3,9 @@ H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\bin\
 H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
 H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\ClassLibrary.dll
 H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csproj.CoreCompileInputs.cache
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.pdb
