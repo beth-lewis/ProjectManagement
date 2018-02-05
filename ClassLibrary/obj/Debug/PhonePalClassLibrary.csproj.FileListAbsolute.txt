@@ -1,0 +1,5 @@
+H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\bin\Debug\ClassLibrary.dll
+H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\bin\Debug\ClassLibrary.pdb
+H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
+H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\ClassLibrary.dll
+H:\Year 2\Project Management and Development\PhonePal\PhonePal\ClassLibrary\obj\Debug\ClassLibrary.pdb
