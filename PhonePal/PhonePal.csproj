@@ -88,6 +88,7 @@
     <Content Include="Manufacturer Web Pages\EditManufacturer.aspx" />
     <Content Include="Manufacturer Web Pages\Manufacturer.aspx" />
     <Content Include="Manufacturer Web Pages\StyleSheet.css" />
+    <Content Include="Staff Web Pages\AdminHomepage.aspx" />
     <Content Include="Staff Web Pages\AdminHomepage.html" />
     <Content Include="Staff Web Pages\AdminSearchStaff.html" />
     <Content Include="Staff Web Pages\Homepage.html" />
@@ -139,6 +140,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staff Web Pages\AdminHomepage.aspx.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff Web Pages\AdminHomepage.aspx.designer.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Staff Web Pages\Staff.aspx.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
