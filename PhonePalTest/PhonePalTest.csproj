@@ -52,8 +52,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Contract Property Tests\tstContract _NumberOfMinutes.cs" />
+    <Compile Include="Contract Property Tests\tstContract _DataAllowance.cs" />
+    <Compile Include="Contract Property Tests\tstContract_ContractType.cs" />
     <Compile Include="tstAccessory.cs" />
-    <Compile Include="tstContract.cs" />
+    <Compile Include="Contract Property Tests\tstContract.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstManufacturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

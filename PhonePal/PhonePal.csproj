@@ -80,8 +80,8 @@
     <Content Include="Contract Web Pages\Cancel Contract.aspx" />
     <Content Include="Contract Web Pages\Find A Contract.aspx" />
     <Content Include="Contract Web Pages\Main Page Contract.aspx" />
-    <Content Include="Contract Web Pages\molumen_phone_icon.png" />
-    <Content Include="Contract Web Pages\StyleSheet.css" />
+    <Content Include="molumen_phone_icon.png" />
+    <Content Include="StyleSheet.css" />
     <Content Include="Contract Web Pages\Upgrade Contract.aspx" />
     <Content Include="Customer Web Pages\Customer.aspx" />
     <Content Include="Manufacturer Web Pages\AddManufacturer.aspx" />

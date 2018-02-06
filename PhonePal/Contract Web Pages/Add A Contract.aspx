@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Phone Pal - Contracts</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /><!--link to stlesheet-->
+    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
     <style type="text/css">
         .auto-style1 {
             height: 393px;
@@ -139,7 +139,7 @@
         <div id="header">
             <table style="width:360px">
                 <tr>
-                         <td><img src="molumen_phone_icon.png" height="50" width="50" /></td>
+                         <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
                 </tr>
             </table>
