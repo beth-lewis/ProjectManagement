@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Phone Pal</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /><!--link to stlesheet-->
+    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <div id="header">
             <table style="width:360px">
                 <tr>
-                    <td><img src="images/molumen_phone_icon.png" height="50" width="50" /></td>
+                    <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
                 </tr>
             </table>
@@ -99,7 +99,7 @@
                     </table>
                     <br/>
                     <input id="btnAddManufacturer" type="button" value="Add Manufacturer" />
-                    <a href="Manufacturer.html"><input id="btnBack" type="submit" value="Back" /> </a>
+                    <a href="Manufacturer.aspx"><input id="btnBack" type="submit" value="Back" /> </a>
                 </center>
                 <br />
 

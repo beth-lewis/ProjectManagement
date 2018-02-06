@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Phone Pal - Manufacturers</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /><!--link to stlesheet-->
+    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
 </head>
 
 
@@ -14,7 +14,7 @@
         <div id="header">
             <table style="width:360px">
                 <tr>
-                    <td><img src="images/molumen_phone_icon.png" height="50" width="50" /></td>
+                    <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
                 </tr>
             </table>
@@ -55,9 +55,9 @@
                                 <a href="Contract.html"><input id="btnViewContracts" type="submit" value="View Contracts" /></a>
                                 <br /><br />
 
-                                <a href="AddManufacturer.html"><input id="btnAddManufacturer" type="submit" value="Add Manufacturer" /></a>
+                                <a href="AddManufacturer.aspx"><input id="btnAddManufacturer" type="submit" value="Add Manufacturer" /></a>
 
-                                <a href="EditManufacturer.html"><input id="btnEditManufacturer" type="submit" value="Edit Manufacturer" /></a>
+                                <a href="EditManufacturer.aspx"><input id="btnEditManufacturer" type="submit" value="Edit Manufacturer" /></a>
 
                                 <input id="btnDeleteMAnufacturer" type="button" value="Delete Manufacturer" />
 
