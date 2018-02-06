@@ -13,11 +13,11 @@ namespace PhonePalClassLibrary
         public string NumberOfMinutes { get; set; }//public property for Number of Minutes - data type string
         public string NumberOfTexts { get; set; }//public property for Number of Texts - data type string
         public decimal PricePerMonth { get; set; }//public property for Price Per Month - data type decimal
-        public int ContractNo { get; set; }
-        public int CustomerNo { get; set; }
-        public int ManufacturerNo { get; set; }
-        public string Duration { get; set; }
-        public int StaffNo { get; set; }
-        public DateTime StartDate { get; set; }
+        public int ContractNo { get; set; }//public property for ContractNo - data type int
+        public int CustomerNo { get; set; } //public property for CustomerNo - data type int
+        public int ManufacturerNo { get; set; }//public property for ManufacturerNo - data type int
+        public string Duration { get; set; }//public property for Duration - data type int 
+        public int StaffNo { get; set; } //public property for StaffNo - data type int
+        public DateTime StartDate { get; set; } //public property for Start Date - data type DateTime
     }
 }
