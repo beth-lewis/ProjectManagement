@@ -95,7 +95,6 @@
     <Content Include="Staff Web Pages\StaffAddDetails.aspx" />
     <Content Include="Staff Web Pages\StaffDisplayDetails.aspx" />
     <Content Include="Staff Web Pages\StaffUpdateDetails.aspx" />
-    <Content Include="Staff Web Pages\StaffUpdateDetails.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
