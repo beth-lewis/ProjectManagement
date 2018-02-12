@@ -92,6 +92,7 @@
     <Content Include="Staff Web Pages\AdminSearchStaff.aspx" />
     <Content Include="Staff Web Pages\Homepage.aspx" />
     <Content Include="Staff Web Pages\StaffAddDetails.aspx" />
+    <Content Include="Staff Web Pages\StaffDisplayDetails.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="Staff Web Pages\StaffAddDetails.aspx.designer.cs">
       <DependentUpon>StaffAddDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff Web Pages\StaffDisplayDetails.aspx.cs">
+      <DependentUpon>StaffDisplayDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff Web Pages\StaffDisplayDetails.aspx.designer.cs">
+      <DependentUpon>StaffDisplayDetails.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
