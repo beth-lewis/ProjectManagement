@@ -90,6 +90,7 @@
     <Content Include="Manufacturer Web Pages\StyleSheet.css" />
     <Content Include="Staff Web Pages\AdminHomepage.aspx" />
     <Content Include="Staff Web Pages\AdminSearchStaff.aspx" />
+    <Content Include="Staff Web Pages\Homepage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Staff Web Pages\AdminSearchStaff.aspx.designer.cs">
       <DependentUpon>AdminSearchStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff Web Pages\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff Web Pages\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
