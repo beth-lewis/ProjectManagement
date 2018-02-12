@@ -88,13 +88,6 @@
     <Content Include="Manufacturer Web Pages\EditManufacturer.aspx" />
     <Content Include="Manufacturer Web Pages\Manufacturer.aspx" />
     <Content Include="Manufacturer Web Pages\StyleSheet.css" />
-    <Content Include="Staff Web Pages\AdminHomepage.aspx" />
-    <Content Include="Staff Web Pages\AdminSearchStaff.aspx" />
-    <Content Include="Staff Web Pages\Homepage.aspx" />
-    <Content Include="Staff Web Pages\Staff.aspx" />
-    <Content Include="Staff Web Pages\StaffAddDetails.aspx" />
-    <Content Include="Staff Web Pages\StaffDisplayDetails.aspx" />
-    <Content Include="Staff Web Pages\StaffUpdateDetails.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,54 +132,10 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Staff Web Pages\AdminHomepage.aspx.cs">
-      <DependentUpon>AdminHomepage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\AdminHomepage.aspx.designer.cs">
-      <DependentUpon>AdminHomepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Staff Web Pages\AdminSearchStaff.aspx.cs">
-      <DependentUpon>AdminSearchStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\AdminSearchStaff.aspx.designer.cs">
-      <DependentUpon>AdminSearchStaff.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Staff Web Pages\Homepage.aspx.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\Homepage.aspx.designer.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Staff Web Pages\Staff.aspx.cs">
-      <DependentUpon>Staff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffAddDetails.aspx.cs">
-      <DependentUpon>StaffAddDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffAddDetails.aspx.designer.cs">
-      <DependentUpon>StaffAddDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffDisplayDetails.aspx.cs">
-      <DependentUpon>StaffDisplayDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffDisplayDetails.aspx.designer.cs">
-      <DependentUpon>StaffDisplayDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffUpdateDetails.aspx.cs">
-      <DependentUpon>StaffUpdateDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Staff Web Pages\StaffUpdateDetails.aspx.designer.cs">
-      <DependentUpon>StaffUpdateDetails.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Staff Web Pages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
