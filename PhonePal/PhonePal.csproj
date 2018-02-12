@@ -66,6 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Prototype.mdf" />
+    <Content Include="App_Data\Prototype_log.ldf">
+      <DependentUpon>Prototype.mdf</DependentUpon>
+    </Content>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -90,8 +94,6 @@
     <Content Include="StyleSheet.css" />
     <Content Include="Staff Web Pages\AdminHomepage.html" />
     <Content Include="Staff Web Pages\AdminSearchStaff.html" />
-    <Content Include="Staff Web Pages\Homepage.html" />
-    <Content Include="Staff Web Pages\Staff.aspx" />
     <Content Include="Staff Web Pages\StaffAddDetails.html" />
     <Content Include="Staff Web Pages\StaffDisplayDetails.html" />
     <Content Include="Staff Web Pages\StaffUpdateDetails.html" />
@@ -139,10 +141,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Staff Web Pages\Staff.aspx.cs">
-      <DependentUpon>Staff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
