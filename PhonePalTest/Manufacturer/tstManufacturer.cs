@@ -17,6 +17,21 @@ namespace PhonePalTest
         }
 
         [TestMethod]
+        public void VaildMethodOK()
+            {
+            //create an instance of the class
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //boolean to store the result of the validation
+            Boolean OK = false;
+            //create some test data to assign to the property
+            string SomeManufacturer = "Apple";
+            //invoke the method
+            OK = AManufacturer.Valid(SomeManufacturer);
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+            }
+
+        [TestMethod]
         public void ActivePropertyOK()
         {
             //create an instance of the class
@@ -34,12 +49,15 @@ namespace PhonePalTest
         {
             //create an instance of the class
             clsManufacturer AManufacturer = new clsManufacturer();
-            //create some test data
-            DateTime TestData = DateTime.Now.Date;
-            //assign the data to the property
-            AManufacturer.DateAdded = TestData;
-            //test to see the two values are the same
-            Assert.AreEqual(AManufacturer.DateAdded, TestData);
+            //boolean to store the result of the validation
+            Boolean OK = false;
+            //create some test data to assign to the property
+            string SomeManufacturer = "Apple";
+            //invoke the method
+            OK = AManufacturer.Valid(SomeManufacturer);
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
         }
 
         [TestMethod]
@@ -69,12 +87,93 @@ namespace PhonePalTest
         }
 
         [TestMethod]
+        public void LocationPropertyMin()
+        {
+            //create an instance
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //create some test data
+            string TestData = "L";
+            //assign the data to th property 
+            AManufacturer.Location = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AManufacturer.Location, TestData);
+        }
+        [TestMethod]
+        public void LoctionPropertyBlank()
+        {
+            //create an instance of the class
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //boolean to store the result of the validation
+            Boolean OK = false;
+            //create some test data to assign to the property
+            string SomeManufacturer = "";
+            //invoke the method
+            OK = AManufacturer.Valid(SomeManufacturer);
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void LocationPropertyMax()
+        {
+            //create an instance 
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //creat some some test data 
+            string TestData = "llllllllllllllllllllllllllllllllllllllllllllllllll";
+            //assign the data to the property
+            AManufacturer.Location = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AManufacturer.Location, TestData);
+        }
+
+        [TestMethod]
         public void NamePropertyOK()
         {
             //create an instance 
             clsManufacturer AManufacturer = new clsManufacturer();
             //create some test data
             string TestData = "Apple";
+            //assign the data to the property
+            AManufacturer.Name = TestData;
+            //test to see if the values are the same
+            Assert.AreEqual(AManufacturer.Name, TestData);
+        }
+
+        [TestMethod]
+        public void NamePropertyMin()
+        {
+            //create an instance 
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //create some test data
+            string TestData = "A";
+            //assign the data to the property
+            AManufacturer.Name = TestData;
+            //test to see if the values are the same
+            Assert.AreEqual(AManufacturer.Name, TestData);
+        }
+
+        [TestMethod]
+        public void NamePropertyMinBlank()
+        {
+            //create an instance of the class
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //boolean to store the result of the validation
+            Boolean OK = false;
+            //create some test data to assign to the property
+            string SomeManufacturer = "";
+            //invoke the method
+            OK = AManufacturer.Valid(SomeManufacturer);
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void NamePropertyMax()
+        {
+            //create an instance 
+            clsManufacturer AManufacturer = new clsManufacturer();
+            //create some test data
+            string TestData = "llllllllllllllllllllllllllllllllllllllllllllllllll";
             //assign the data to the property
             AManufacturer.Name = TestData;
             //test to see if the values are the same
