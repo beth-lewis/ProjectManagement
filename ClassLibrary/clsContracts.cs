@@ -28,7 +28,7 @@ namespace PhonePalClassLibrary
 
         {
             //create a temporary variable to store data values
-            DateTime DateTemp;
+           // DateTime DateTemp;
             //boolean flag to indicate that all is ok
             Boolean OK = true;
             //if the name of the contract type is blank
