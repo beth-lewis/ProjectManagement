@@ -7,7 +7,7 @@ namespace PhonePalTest
     public class tstContract
     {
         //boolean variable to store the result of the validation
-        String Error = "";
+        Boolean OK = false;
         //create some test data to assign to the properties
         string SomeContractType = "Pay As You Go";
         string SomeDataAllowance = "5gb";
@@ -21,7 +21,7 @@ namespace PhonePalTest
         int SomeStaffNo = 1;
         DateTime TheStartDate = DateTime.Now.Date;
         //create an instance of the class we want to create
-        clsContract AContract = new clsContract();
+        clsContracts AContract = new clsContracts();
         [TestMethod]
         public void InstanceOK()
         {
