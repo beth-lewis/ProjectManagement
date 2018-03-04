@@ -8,6 +8,7 @@ namespace PhonePalTest
     {
         //boolean variable to store the result of the validation
         String Error = "";
+        Boolean OK = false;
         //create some test data to assign to the properties
         string SomeContractType = "Pay As You Go";
         string SomeDataAllowance = "5gb";
