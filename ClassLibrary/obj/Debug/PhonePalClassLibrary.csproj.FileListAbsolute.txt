@@ -14,3 +14,8 @@ D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assign
 D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csproj.CoreCompileInputs.cache
 D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.dll
 D:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.pdb
+H:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\bin\Debug\ClassLibrary.dll
+H:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\bin\Debug\ClassLibrary.pdb
+H:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
+H:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.dll
+H:\Documents\Computing\Year 2\IMAT2204 Project Management and Development\Assignments\Phone Pal\ClassLibrary\obj\Debug\ClassLibrary.pdb

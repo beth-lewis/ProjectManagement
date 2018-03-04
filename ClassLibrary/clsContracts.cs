@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhonePalClassLibrary
 {
-    public class clsContract
+    public class clsContracts
     {
         public string ContractType { get; set; }//property for Contract Type - data type string
         public string DataAllowance { get; set; }//public property for Data Allowance - data type string
