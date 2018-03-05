@@ -31,17 +31,17 @@ namespace PhonePalTest
             //create the item of test data
             clsContracts TestItem = new clsContracts();
             //set its properties
-            TestItem.ContractNo = 1;
-            TestItem.ContractType = "Pay As You Go";
-            TestItem.CustomerNo = 1;
-            TestItem.ManufacturerNo = 1;
-            TestItem.NumberOfMinutes = "600 Mins";
-            TestItem.NumberOfTexts = "Unlimited";
-            TestItem.PricePerMonth = 30;
-            TestItem.StaffNo = 1;
-            TestItem.StartDate = DateTime.Now.Date;
-            TestItem.Duration = "2 Years";
-            TestItem.CustomerNo = 1;
+            TestItem.contractNo = 1;
+            TestItem.contractType = "Pay As You Go";
+            TestItem.customerNo = 1;
+            TestItem.manufacturerNo = 1;
+            TestItem.numberOfMinutes = "600 Mins";
+            TestItem.numberOfTexts = "Unlimited";
+            TestItem.pricePerMonth = 30;
+            TestItem.staffNo = 1;
+            TestItem.startDate = DateTime.Now.Date;
+            TestItem.duration = "2 Years";
+            TestItem.customerNo = 1;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property

@@ -8,19 +8,18 @@ namespace PhonePalTest
     {
         //boolean variable to store the result of the validation
         String Error = "";
-        Boolean OK = false;
         //create some test data to assign to the properties
         string SomeContractType = "Pay As You Go";
         string SomeDataAllowance = "5gb";
         string SomeNumberOfMinutes = "600 Mins";
         string SomeNumberOfTexts = "Unlimited";
-        int SomePricePerMonth = 30;
+        string SomePricePerMonth = "30";
         string SomeDuration = "2 Years";
-        int SomeContractNo = 1;
-        int SomeCustomerNo = 1;
-        int SomeManufacturerNo = 1;
-        int SomeStaffNo = 1;
-        DateTime TheStartDate = DateTime.Now.Date;
+        string SomeContractNo = "1";
+        string SomeCustomerNo = "1";
+        string SomeManufacturerNo = "1";
+        string SomeStaffNo = "1";
+        string TheStartDate = DateTime.Now.Date.ToString();
         //create an instance of the class we want to create
         clsContracts AContract = new clsContracts();
         [TestMethod]
@@ -34,17 +33,17 @@ namespace PhonePalTest
         [TestMethod]
         public void ValidMethodOK()
         {
-   
+
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance, 
-                SomeNumberOfMinutes,SomeNumberOfTexts,
-                SomePricePerMonth,SomeDuration,
-                SomeContractNo,SomeCustomerNo,SomeManufacturerNo,
-                SomeStaffNo,TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         
         [TestMethod]
@@ -53,24 +52,24 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "Pay As You Go";
             //assign data to the property
-            AContract.ContractType = TestData;
+            AContract.contractType = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.ContractType, TestData);
+            Assert.AreEqual(AContract.contractType, TestData);
         }
         [TestMethod]
         public void ContractTypeMinLessOne()
         {
             string SomeContractType = "";
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMinBoundary()
@@ -79,15 +78,15 @@ namespace PhonePalTest
             //pad the string with a single 'a' character
             SomeContractType = SomeContractType.PadRight(1, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMinPlusOne()
@@ -95,15 +94,15 @@ namespace PhonePalTest
             //pad the string with two 'a' characters
             SomeContractType = SomeContractType.PadRight(2, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxLessOne()
@@ -111,15 +110,15 @@ namespace PhonePalTest
             //pad the string with 29 'a' characters
             SomeContractType = SomeContractType.PadRight(29, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance, 
-                SomeNumberOfMinutes,SomeNumberOfTexts,
-                SomePricePerMonth,SomeDuration,
-                SomeContractNo,SomeCustomerNo,SomeManufacturerNo,
-                SomeStaffNo,TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxBoundary()
@@ -127,15 +126,15 @@ namespace PhonePalTest
             //pad the string with 30 'a' characters
             SomeContractType = SomeContractType.PadRight(30, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxPlusOne()
@@ -143,15 +142,15 @@ namespace PhonePalTest
             //pad the string with 31 'a' characters
             SomeContractType = SomeContractType.PadRight(31, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMid()
@@ -159,15 +158,15 @@ namespace PhonePalTest
             //pad the string with 15 'a' characters
             SomeContractType = SomeContractType.PadRight(15, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxExtreme()
@@ -175,15 +174,15 @@ namespace PhonePalTest
             //pad the string with 300 'a' characters
             SomeContractType = SomeContractType.PadRight(300, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
     
 
@@ -195,9 +194,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "5GB";
             //assign data to the property
-            AContract.DataAllowance = TestData;
+            AContract.dataAllowance = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.DataAllowance, TestData);
+            Assert.AreEqual(AContract.dataAllowance, TestData);
         }
 
         [TestMethod]
@@ -205,15 +204,15 @@ namespace PhonePalTest
         {
             SomeDataAllowance = "";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMinBoundary()
@@ -221,15 +220,15 @@ namespace PhonePalTest
             //pad the string with a 2 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(1, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMinPlusOne()
@@ -237,15 +236,15 @@ namespace PhonePalTest
             //pad the string with 2 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(2, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMaxLessOne()
@@ -253,15 +252,15 @@ namespace PhonePalTest
             //pad the string with 9 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(9, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMaxBoundary()
@@ -269,15 +268,15 @@ namespace PhonePalTest
             //pad the string with 10 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(10, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -286,30 +285,30 @@ namespace PhonePalTest
             //pad the string with 11 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(11, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMaxExtreme()
         {
             SomeDataAllowance = SomeDataAllowance.PadRight(100, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMid()
@@ -317,15 +316,15 @@ namespace PhonePalTest
             //pad the string with 5 'a' character
             SomeDataAllowance = SomeDataAllowance.PadRight(5, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesPropertyOK()
@@ -333,24 +332,24 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "600 Mins";
             //assign data to the property
-            AContract.NumberOfMinutes = TestData;
+            AContract.numberOfMinutes = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.NumberOfMinutes, TestData);
+            Assert.AreEqual(AContract.numberOfMinutes, TestData);
         }
         [TestMethod]
         public void NumberOfMinutesMinLessOne()
         {
             SomeNumberOfMinutes = "";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMinBoundary()
@@ -358,15 +357,15 @@ namespace PhonePalTest
             //pad the string with a single 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(1, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMinPlusOne()
@@ -374,15 +373,15 @@ namespace PhonePalTest
             //pad the string with 2 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(2, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxLessOne()
@@ -390,15 +389,15 @@ namespace PhonePalTest
             //pad the string with 49 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(49, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxBoundary()
@@ -406,15 +405,15 @@ namespace PhonePalTest
             //pad the string with 50 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(50, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxPlusOne()
@@ -422,15 +421,15 @@ namespace PhonePalTest
             //pad the string with 51 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(51, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxExtreme()
@@ -438,15 +437,15 @@ namespace PhonePalTest
             //pad the string with 500 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(500, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMid()
@@ -454,15 +453,15 @@ namespace PhonePalTest
             //pad the string with 25 'a' character
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(25, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsPropertyOK()
@@ -470,9 +469,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "Unlimited";
             //assign data to the property
-            AContract.NumberOfTexts = TestData;
+            AContract.numberOfTexts = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.NumberOfTexts, TestData);
+            Assert.AreEqual(AContract.numberOfTexts, TestData);
         }
 
         [TestMethod]
@@ -480,15 +479,15 @@ namespace PhonePalTest
         {
             SomeNumberOfTexts = "";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMinBoundary()
@@ -496,15 +495,15 @@ namespace PhonePalTest
             //pad the string with 1 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(1, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMinPlusOne()
@@ -512,15 +511,15 @@ namespace PhonePalTest
             //pad the string with 2 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(2, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxLessOne()
@@ -528,15 +527,15 @@ namespace PhonePalTest
             //pad the string with 49 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(49, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxBoundary()
@@ -544,15 +543,15 @@ namespace PhonePalTest
             //pad the string with 50 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(50, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxPlusOne()
@@ -560,15 +559,15 @@ namespace PhonePalTest
             //pad the string with 51 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(51, 'a');
             //invoke the method
-            OK = AContract.Valid(
-                SomeContractType, SomeDataAllowance,
-                SomeNumberOfMinutes, SomeNumberOfTexts,
-                SomePricePerMonth, SomeDuration,
-                SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-                SomeStaffNo, TheStartDate
-                );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxExtreme()
@@ -576,15 +575,15 @@ namespace PhonePalTest
             //pad the string with 500 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(500, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMid()
@@ -593,15 +592,15 @@ namespace PhonePalTest
             //pad the string with 25 'a' character
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(25, 'a');
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -610,91 +609,91 @@ namespace PhonePalTest
             //create some test data to assign to the property
             decimal TestData = 30;
             //assign data to the property
-            AContract.PricePerMonth = TestData;
+            AContract.pricePerMonth = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.PricePerMonth, TestData);
+            Assert.AreEqual(AContract.pricePerMonth, TestData);
         }
         [TestMethod]
         public void PricePerMonthMinLessOne()
         {
-            int SomePricePerMonth = 0;
+            string SomePricePerMonth = "0";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMinBoundary()
         {
-            int SomePricePerMonth = 1;
+            string SomePricePerMonth = "1";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMinPlusOne()
         {
-            int SomePricePerMonth = 11;
+            string SomePricePerMonth = "11";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxLessOne()
         {
-            int SomePricePerMonth = 999;
+            string SomePricePerMonth = "999";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxBoundary()
         {
-            int SomePricePerMonth = 9999;
+            string SomePricePerMonth = "9999";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxPlusOne()
         {
-            SomePricePerMonth = 99999;
+            SomePricePerMonth = "99999";
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -702,14 +701,14 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxExtreme()
         {
-            int SomePricePerMonth = 999999999;
+            SomePricePerMonth = "999999999";
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -717,15 +716,15 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
         public void PricePerMonthMid()
         {
-            int SomePricePerMonth = 10;
+            SomePricePerMonth = "10";
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -733,7 +732,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationPropertyOK()
@@ -741,9 +740,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "12 Months";
             //assign data to the property
-            AContract.Duration = TestData;
+            AContract.duration = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.Duration, TestData);
+            Assert.AreEqual(AContract.duration, TestData);
         }
 
         [TestMethod]
@@ -751,39 +750,7 @@ namespace PhonePalTest
         {
             SomeDuration = "";
             //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
-            //test to see that the result is correct
-            Assert.IsFalse(OK);
-        }
-        [TestMethod]
-        public void DurationMinBoundary()
-        {
-            //pad the string with 6 'a' character
-            SomeDuration = SomeDuration.PadRight(6, 'a');
-            //invoke the method
-            OK = AContract.Valid(
-               SomeContractType, SomeDataAllowance,
-               SomeNumberOfMinutes, SomeNumberOfTexts,
-               SomePricePerMonth, SomeDuration,
-               SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-               SomeStaffNo, TheStartDate
-               );
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
-        }
-        [TestMethod]
-        public void DurationMinPlusOne()
-        {
-            //pad the string with 8 'a' character
-            SomeDuration = SomeDuration.PadRight(8, 'a');
-            //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -791,7 +758,39 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DurationMinBoundary()
+        {
+            //pad the string with 6 'a' character
+            SomeDuration = SomeDuration.PadRight(6, 'a');
+            //invoke the method
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DurationMinPlusOne()
+        {
+            //pad the string with 8 'a' character
+            SomeDuration = SomeDuration.PadRight(8, 'a');
+            //invoke the method
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxLessOne()
@@ -800,7 +799,7 @@ namespace PhonePalTest
             //pad the string with 19 'a' character
             SomeDuration = SomeDuration.PadRight(19, 'a');
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -808,7 +807,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxBoundary()
@@ -817,7 +816,7 @@ namespace PhonePalTest
             //pad the string with 20 'a' character
             SomeDuration = SomeDuration.PadRight(20, 'a');
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -825,7 +824,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxPlusOne()
@@ -833,7 +832,7 @@ namespace PhonePalTest
             //pad the string with 20 'a' character
             SomeDuration = SomeDuration.PadRight(21, 'a');
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -841,7 +840,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxExtreme()
@@ -849,7 +848,7 @@ namespace PhonePalTest
             //pad the string with 20 'a' character
             SomeDuration = SomeDuration.PadRight(1000, 'a');
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -857,7 +856,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void DurationMid()
@@ -866,7 +865,7 @@ namespace PhonePalTest
             //pad the string with 20 'a' character
             SomeDuration = SomeDuration.PadRight(10, 'a');
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -874,7 +873,7 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsTrue(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void ContractNoPropertyOK()
@@ -882,9 +881,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.ContractNo = TestData;
+            AContract.contractNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.ContractNo, TestData);
+            Assert.AreEqual(AContract.contractNo, TestData);
         }
 
 
@@ -894,9 +893,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.CustomerNo = TestData;
+            AContract.customerNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.CustomerNo, TestData);
+            Assert.AreEqual(AContract.customerNo, TestData);
         }
 
 
@@ -906,9 +905,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.ManufacturerNo = TestData;
+            AContract.manufacturerNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.ManufacturerNo, TestData);
+            Assert.AreEqual(AContract.manufacturerNo, TestData);
         }
 
 
@@ -918,9 +917,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.StaffNo = TestData;
+            AContract.staffNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.StaffNo, TestData);
+            Assert.AreEqual(AContract.staffNo, TestData);
         }
 
 
@@ -930,17 +929,41 @@ namespace PhonePalTest
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign data to the property
-            AContract.StartDate = TestData;
+            AContract.startDate = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.StartDate, TestData);
+            Assert.AreEqual(AContract.startDate, TestData);
         }
         [TestMethod]
-        public void StartDateMinusOneDay()
+        public void StartDateMin()
         {
+            //set to todays date
+            TheStartDate = DateTime.Now.Date.ToString();
+            //convert the date variable to a string variable
+            string StartDate = TheStartDate.ToString();
+            //invoke the method
+            //invoke the method
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void StartDateMinLessOne()
+        { 
             //set to yesterdays date
-            TheStartDate = TheStartDate.AddDays(-1);
+            //TheStartDate 
+            DateTime TempDate =Convert.ToDateTime(TheStartDate).AddDays(-1);
+            TheStartDate = TempDate.ToString();
+            //convert the date variable to a string variable
+            string StartDate = TheStartDate.ToString();
             //invoke the method
-            OK = AContract.Valid(
+            //invoke the method
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -948,14 +971,19 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        public void StartDatePlusOneDay()
+        public void StartDateMinPlusOne()
         {
-            TheStartDate = TheStartDate.AddDays(1);
+            //set to todays date plus one day
+            DateTime TempDate = Convert.ToDateTime(TheStartDate).AddDays(1);
+            TheStartDate = TempDate.ToString();
+            //convert the date variable to a string variable
+            string StartDate = TheStartDate.ToString();
             //invoke the method
-            OK = AContract.Valid(
+            //invoke the method
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -963,14 +991,19 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        public void StartDateExtremePlus()
+        public void StartDateExtremeMin()
         {
-            TheStartDate = TheStartDate.AddYears(100);
+            //set date to todays date minus 100 years
+            DateTime TempDate = Convert.ToDateTime(TheStartDate).AddYears(-100);
+            TheStartDate = TempDate.ToString();
+            //convert the date variable to a string variable
+            string StartDate = TheStartDate.ToString();
             //invoke the method
-            OK = AContract.Valid(
+            //invoke the method
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -978,14 +1011,18 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        public void StartDateExtremeMinus()
+        public void StartDateExtremeMax()
         {
-            TheStartDate = TheStartDate.AddYears(-100);
+            //set date to todays date plus 100 years
+            DateTime TempDate = Convert.ToDateTime(TheStartDate).AddYears(100);
+            TheStartDate = TempDate.ToString();
+            //convert the date variable to a string variable
+            string StartDate = TheStartDate.ToString();
             //invoke the method
-            OK = AContract.Valid(
+            Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
@@ -993,8 +1030,24 @@ namespace PhonePalTest
               SomeStaffNo, TheStartDate
               );
             //test to see that the result is correct
-            Assert.IsFalse(OK);
+            Assert.AreNotEqual(Error, "");
         }
+        [TestMethod]
+        public void StartDateInvalidData()
+        {
+            //set the start date to a non date value
+            string TheStartDate = "this is not a date";
+            Error = AContract.Valid(
+              SomeContractType, SomeDataAllowance,
+              SomeNumberOfMinutes, SomeNumberOfTexts,
+              SomePricePerMonth, SomeDuration,
+              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
+              SomeStaffNo, TheStartDate
+              );
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+       
 
     }
 }
