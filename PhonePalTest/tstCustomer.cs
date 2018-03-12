@@ -31,6 +31,17 @@ namespace PhonePalTest
         }
 
         [TestMethod]
+        public void DataAddedPropertyOK()
+        {
+            //crete an instance of the class we wwant t create
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property
+            DateTime TestData = DateTime.Now.Date;
+            //assign the data to the propety
+            ACustomer.DateAdded = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(ACustomer.DateAdded, TestData);
+        }
 
     
     }
