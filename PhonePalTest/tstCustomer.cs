@@ -13,6 +13,8 @@ namespace PhonePalTest
         private int AddressNo;
         private object AnAddress;
 
+        public int CountyNo { get; private set; }
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -25,7 +27,7 @@ namespace PhonePalTest
         [TestMethod]
         public void ActivePropertyOK()
         {
-            //create an instnc of the clas we want to create
+            //create an instance of the clas we want to create
             clsCustomer ACustomer = new clsCustomer();
             //create some test data to assign to the property
             Boolean TestData = true;
@@ -69,13 +71,13 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign th data to te property
-            AnAddress.CountyNo = TestData;
+            ACustomer.CountyNo = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(ACustomer.CountyNo, TestData);
 
         }
-        }
     
     }
 }
+
 

@@ -8,3 +8,8 @@ H:\Year 2\Project Management and Development\PhonePal\New folder\ClassLibrary\bi
 H:\Year 2\Project Management and Development\PhonePal\New folder\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
 H:\Year 2\Project Management and Development\PhonePal\New folder\ClassLibrary\obj\Debug\ClassLibrary.dll
 H:\Year 2\Project Management and Development\PhonePal\New folder\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\ClassLibrary\obj\Debug\PhonePalClassLibrary.csprojResolveAssemblyReference.cache
+D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\ClassLibrary\obj\Debug\ClassLibrary.pdb
