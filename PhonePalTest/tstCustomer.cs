@@ -8,6 +8,11 @@ namespace PhonePalTest
 
     public class clsCustomer
     {
+        private bool Active;
+        private DateTime DateAdded;
+        private int AddressNo;
+        private object AnAddress;
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -43,6 +48,33 @@ namespace PhonePalTest
             Assert.AreEqual(ACustomer.DateAdded, TestData);
         }
 
+        [TestMethod]
+        public void AddressNoPropertyOK()
+        {
+            //crate an instnce of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign the data to the property
+            ACustomer.AddressNo = TestData;
+            //test to see tht the two values are the same
+            Assert.AreEqual(ACustomer.AddressNo, TestData);
+        }
+
+        [TestMethod]
+        public void CountyNoPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign th data to te property
+            AnAddress.CountyNo = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(ACustomer.CountyNo, TestData);
+
+        }
+        }
     
     }
 }
