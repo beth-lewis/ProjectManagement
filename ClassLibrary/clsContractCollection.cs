@@ -8,12 +8,14 @@ namespace PhonePalClassLibrary
     {
         //private data member for allContracts List
         private List<clsContracts> mAllContracts = new List<clsContracts>();
+        //private data member for the list
+        List<clsContracts> mContractList = new List<clsContracts>();
         public int Count
         {
             get
             {
                 //return the count property of the private list
-                return mAllContracts.Count;
+                return mContractList.Count;
             }
             set
             {
@@ -23,19 +25,35 @@ namespace PhonePalClassLibrary
         //public constructor for the class        
         public clsContractCollection()
         {
-            //create an instance of the contract class store a contract
-            clsContracts AContractType = new clsContracts();
-            //set the Contract Type to Pay As You Go
-            AContractType.contractType = "Pay As You Go";
-            //add the contract type to the private list of contract types
-            mAllContracts.Add(AContractType);
-            //re initialise the AContractType object to accept a new item
-            AContractType = new clsContracts();
-            //set the contract type to Monthly
-            AContractType.contractType = "Monthly";
-            //add the second contract type to the private list of contract type
-            mAllContracts.Add(AContractType);
-            //private list now contains two contract types
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnectionContract DB = new clsDataConnectionContract();
+            //execute the store procedure
+            DB.Execute("sproc_tblContracts_SelectAll");
+            //get the count of the records
+            RecordCount = DB.Count;
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank contract 
+                clsContracts AContract = new clsContracts();
+                //read in the fields from the current record
+                AContract.contractNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ContractNo"]);
+                AContract.contractType = Convert.ToString(DB.DataTable.Rows[Index]["ContractType"]);
+                AContract.customerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
+                AContract.dataAllowance = Convert.ToString(DB.DataTable.Rows[Index]["DataAllowance"]);
+                AContract.duration = Convert.ToString(DB.DataTable.Rows[Index]["Duration"]);
+                AContract.manufacturerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ManufacturerNo"]);
+                AContract.numberOfMinutes = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfMinutes"]);
+                AContract.numberOfTexts = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfTexts"]);
+                AContract.pricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
+                AContract.staffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
+                AContract.startDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
+
+            }
         }       
 
         public List<clsContracts> AllContracts
@@ -51,5 +69,20 @@ namespace PhonePalClassLibrary
                 mAllContracts = value;
             }
         }
+
+        public List<clsContracts> ContractList
+        {
+            get
+            {
+                //return the private data
+                return mContractList;
+            }
+            set
+            {
+                //set the private data
+                mContractList = value;
+            }
+        }
+        public clsContracts ThisContract { get; set; }
     }
 }
