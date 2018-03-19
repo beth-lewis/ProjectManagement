@@ -30,7 +30,7 @@ namespace PhonePalClassLibrary
             //var to store the record count
             Int32 RecordCount = 0;
             //object for data connection
-            clsDataConnectionContract DB = new clsDataConnectionContract();
+            clsDataConnection DB = new clsDataConnection();
             //execute the store procedure
             DB.Execute("sproc_tblContracts_SelectAll");
             //get the count of the records
@@ -52,6 +52,10 @@ namespace PhonePalClassLibrary
                 AContract.pricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
                 AContract.staffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
                 AContract.startDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
+                //add the record to the private data member
+                mContractList.Add(AContract);
+                //point at the next record
+                Index++;
 
             }
         }       

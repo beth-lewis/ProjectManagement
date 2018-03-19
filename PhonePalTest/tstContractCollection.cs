@@ -13,17 +13,8 @@ namespace PhonePalTest
         List<clsContracts> TestList = new List<clsContracts>();
         //create the item of test data
         clsContracts TestItem = new clsContracts();
-        [TestMethod]
-        public void CountPropertyOK()
-        {
 
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign data to the property
-            AllContracts.Count = SomeCount;
-            //test to see that it exists
-            Assert.AreEqual(AllContracts.Count, SomeCount);
-        }
+
         [TestMethod]
         public void ContractListOK()
         {
@@ -52,20 +43,20 @@ namespace PhonePalTest
            
            //create some test data to assign to the property
            clsContracts TestContract = new clsContracts();
-           //set the properties of the test object
-           TestContract.contractType = "Pay As You Go";
-           TestContract.dataAllowance = "5gb";
-           TestContract.numberOfMinutes = "600 Mins";
-           TestContract.numberOfTexts = "Unlimited";
-           TestContract.pricePerMonth = 30;
-           TestContract.duration = "2 Years";
-           TestContract.contractNo = 1;
-           TestContract.customerNo = 1;
-           TestContract.manufacturerNo = 1;
-           TestContract.staffNo = 1;
-           TestContract.startDate = DateTime.Now.Date;
-           //assign the data to the property
-           AllContracts.ThisContract = TestContract;
+            //set the properties of the test object
+            TestContract.contractNo = 1;
+            TestContract.contractType = "Pay As You Go";
+            TestContract.customerNo = 1;
+            TestContract.dataAllowance = "5gb";
+            TestContract.duration = "2 Years";
+            TestContract.manufacturerNo = 1;
+            TestContract.numberOfMinutes = "600 Mins";
+            TestContract.numberOfTexts = "Unlimited";
+            TestContract.pricePerMonth = 30;
+            TestContract.staffNo = 1;
+            TestContract.startDate = DateTime.Now.Date;
+            //assign the data to the property
+            AllContracts.ThisContract = TestContract;
            //test to see that the two values are the same
            Assert.AreEqual(AllContracts.ThisContract, TestContract);
         }
@@ -74,15 +65,15 @@ namespace PhonePalTest
         {
             //create an item for the test data
             //here is the test data
+            TestItem.contractNo = 1;
             TestItem.contractType = "Pay As You Go";
+            TestItem.customerNo = 1;
             TestItem.dataAllowance = "5gb";
+            TestItem.duration = "2 Years";
+            TestItem.manufacturerNo = 1;
             TestItem.numberOfMinutes = "600 Mins";
             TestItem.numberOfTexts = "Unlimited";
             TestItem.pricePerMonth = 30;
-            TestItem.duration = "2 Years";
-            TestItem.contractNo = 1;
-            TestItem.customerNo = 1;
-            TestItem.manufacturerNo = 1;
             TestItem.staffNo = 1;
             TestItem.startDate = DateTime.Now.Date;
             //add the item to the test list
@@ -105,14 +96,14 @@ namespace PhonePalTest
             TestItem.contractNo = 1;
             TestItem.contractType = "Pay As You Go";
             TestItem.customerNo = 1;
+            TestItem.dataAllowance = "5gb";
+            TestItem.duration = "2 Years";
             TestItem.manufacturerNo = 1;
             TestItem.numberOfMinutes = "600 Mins";
             TestItem.numberOfTexts = "Unlimited";
             TestItem.pricePerMonth = 30;
             TestItem.staffNo = 1;
             TestItem.startDate = DateTime.Now.Date;
-            TestItem.duration = "2 Years";
-            TestItem.customerNo = 1;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -121,11 +112,6 @@ namespace PhonePalTest
             Assert.AreEqual(AllContracts.Count, TestList.Count);
 
         }
-        [TestMethod]
-        public void TwoContractsPresent()
-        {
-            //test to see that the two values are the same
-            Assert.AreEqual(AllContracts.Count, 2);
-        }  
+       
     }
 }

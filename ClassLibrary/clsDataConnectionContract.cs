@@ -10,7 +10,7 @@ using System.Data;
 ///it is free for use by anybody so long as you give credit to the original author i.e me
 ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2013
 
-public class clsDataConnectionContract
+public class clsDataConnection
 {
     //connection object used to connect to the database
     SqlConnection connectionToDB = new SqlConnection();
@@ -25,12 +25,12 @@ public class clsDataConnectionContract
     //string variable used to store the connection string
     private string connectionString;
 
-    public clsDataConnectionContract()
+    public clsDataConnection()
     {
         GetConString(GetDBName());
     }
 
-    public clsDataConnectionContract(string DBLocation)
+    public clsDataConnection(string DBLocation)
     {
         GetConString(DBLocation);
     }
