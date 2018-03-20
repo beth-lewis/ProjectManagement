@@ -16,34 +16,25 @@
         }
         .auto-style2 {
             position: absolute;
-            top: 380px;
-            left: 990px;
+            top: 440px;
+            left: 985px;
             z-index: 1;
             height: 40px;
         }
         .auto-style3 {
             position: absolute;
-            top: 265px;
+            top: 290px;
             left: 990px;
             z-index: 1;
         }
         .auto-style4 {
             position: absolute;
-            top: 320px;
+            top: 365px;
             left: 990px;
             z-index: 1;
             height: 40px;
             margin-top: 0px;
-            bottom: 256px;
-        }
-        .auto-style5 {
-            position: absolute;
-            top: 237px;
-            left: 330px;
-            z-index: 1;
-            height: 360px;
-            width: 435px;
-            margin-top: 13px;
+            bottom: 320px;
         }
         .auto-style6 {
             height: 666px;
@@ -56,6 +47,14 @@
             left: 810px;
             z-index: 1;
             top: 395px;
+        }
+        .auto-style9 {
+            position: absolute;
+            top: 260px;
+            left: 365px;
+            z-index: 1;
+            width: 397px;
+            height: 389px;
         }
     </style>
 </head>
@@ -94,14 +93,14 @@
 
 
                     <p class="auto-style7">
-                        &nbsp;</p>
+                        <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9"></asp:ListBox>
+                        </p>
 
 
                 </center>
                 <br />
                 <br />
                 <asp:Button ID="btnCancelContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style2" Font-Bold="True" Height="40px" OnClick="btnCancelContract_Click" Text="Cancel Contract" Width="133px" BorderColor="#41719C" />
-                <asp:TextBox ID="txtBxContract" runat="server" CssClass="auto-style5"></asp:TextBox>
                 
             </div>
 

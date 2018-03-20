@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Phone Pal - Contracts</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /><!--link to stlesheet-->
+    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
     <style type="text/css">
         .auto-style1 {
             height: 509px;
@@ -20,6 +20,7 @@
             top: 355px;
             left: 670px;
             z-index: 1;
+            height: 25px;
         }
         .auto-style4 {
             position: absolute;
@@ -72,7 +73,7 @@
         }
         .auto-style20 {
             position: absolute;
-            top: 450px;
+            top: 445px;
             left: 545px;
             z-index: 1;
         }
@@ -91,13 +92,13 @@
         .auto-style9 {
             position: absolute;
             top: 400px;
-            left: 680px;
+            left: 670px;
             z-index: 1;
         }
         .auto-style10 {
             position: absolute;
             top: 445px;
-            left: 680px;
+            left: 670px;
             z-index: 1;
             width: 112px;
             height: 19px;
@@ -105,7 +106,7 @@
         .auto-style12 {
             position: absolute;
             top: 475px;
-            left: 680px;
+            left: 670px;
             z-index: 1;
             width: 102px;
             height: 21px;
@@ -113,13 +114,13 @@
         .auto-style21 {
             position: absolute;
             top: 510px;
-            left: 685px;
+            left: 670px;
             z-index: 1;
         }
         .auto-style22 {
             position: absolute;
             top: 550px;
-            left: 680px;
+            left: 670px;
             z-index: 1;
         }
         </style>
@@ -133,7 +134,7 @@
                         <asp:Label ID="lblCustomerNo" runat="server" CssClass="auto-style13" Font-Bold="True" Text="Customer No"></asp:Label>
             <table style="width:360px">
                 <tr>
-     <td><img src="molumen_phone_icon.png" height="50" width="50" /></td>
+     <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
                 </tr>
             </table>
@@ -160,15 +161,15 @@
 
 
                     <p class="auto-style1">
-                        <asp:TextBox ID="txtStaffNo" runat="server" CssClass="auto-style7" Font-Bold="True" Width="160px"></asp:TextBox>
-                        <asp:TextBox ID="txtManufacturerNo" runat="server" CssClass="auto-style8" Font-Bold="True" Width="160px" Wrap="False"></asp:TextBox>
-                        <asp:DropDownList ID="ddlContractType" runat="server" AutoPostBack="True" CssClass="auto-style9">
+                        <asp:TextBox ID="txtStaffNo" runat="server" CssClass="auto-style7" Font-Bold="True" Width="160px" Height="15px"></asp:TextBox>
+                        <asp:TextBox ID="txtManufacturerNo" runat="server" CssClass="auto-style8" Font-Bold="True" Width="160px" Wrap="False" Height="15px"></asp:TextBox>
+                        <asp:DropDownList ID="ddlContractType" runat="server" AutoPostBack="True" CssClass="auto-style9" Height="20px" Width="170px">
                             <asp:ListItem Value="1">Monthly</asp:ListItem>
                             <asp:ListItem>Pay As You Go</asp:ListItem>
                             <asp:ListItem>Sim Free</asp:ListItem>
                             <asp:ListItem>Sim Only</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlDuration" runat="server" CssClass="auto-style10">
+                        <asp:DropDownList ID="ddlDuration" runat="server" CssClass="auto-style10" Height="20px" Width="170px">
                             <asp:ListItem></asp:ListItem>
                             <asp:ListItem>3 Months</asp:ListItem>
                             <asp:ListItem>6 Months</asp:ListItem>
@@ -176,7 +177,7 @@
                             <asp:ListItem>2 Years</asp:ListItem>
                             <asp:ListItem>3 Years</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:DropDownList ID="ddlDataAllowance" runat="server" CssClass="auto-style12" Height="25px">
+                        <asp:DropDownList ID="ddlDataAllowance" runat="server" CssClass="auto-style12" Height="20px" Width="170px">
                             <asp:ListItem>500MB</asp:ListItem>
                             <asp:ListItem>1GB</asp:ListItem>
                             <asp:ListItem>2GB</asp:ListItem>
@@ -187,7 +188,7 @@
                         </asp:DropDownList>
                     
 
-                        <asp:DropDownList ID="ddlNumberOfMins" runat="server" CssClass="auto-style21">
+                        <asp:DropDownList ID="ddlNumberOfMins" runat="server" CssClass="auto-style21" Height="20px" Width="170px">
                             <asp:ListItem>100 Mins</asp:ListItem>
                             <asp:ListItem>200 Mins</asp:ListItem>
                             <asp:ListItem>300 Mins</asp:ListItem>
@@ -195,7 +196,7 @@
                             <asp:ListItem>500 Mins+</asp:ListItem>
                             <asp:ListItem>Unlimited</asp:ListItem>
                         </asp:DropDownList>
-                        <asp:TextBox ID="txtCustomerNo" runat="server" CssClass="auto-style4" Font-Bold="True"></asp:TextBox>
+                        <asp:TextBox ID="txtCustomerNo" runat="server" CssClass="auto-style4" Font-Bold="True" Height="15px" Width="160px"></asp:TextBox>
                         <asp:Button ID="btnGoBack" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style3" Text="Go Back" Width="105px" OnClick="btnGoBack_Click" />
                         <asp:Label ID="lblStaffNo" runat="server" CssClass="auto-style14" Font-Bold="True" Text="Staff No"></asp:Label>
                         <asp:Label ID="lblManufacturerNo" runat="server" CssClass="auto-style15" Font-Bold="True" Text="Manufacturer No"></asp:Label>
@@ -204,7 +205,7 @@
                         <asp:Label ID="lblDuration" runat="server" CssClass="auto-style20" Font-Bold="True" Text="Duration"></asp:Label>
                         <asp:Label ID="lblNumberOfMinutes" runat="server" CssClass="auto-style18" Font-Bold="True" Text="Number Of Minutes"></asp:Label>
                         <asp:Label ID="lblNumberOfTexts" runat="server" CssClass="auto-style19" Font-Bold="True" Text="Number Of Texts"></asp:Label>
-                        <asp:DropDownList ID="ddlNumberOfTexts" runat="server" CssClass="auto-style22">
+                        <asp:DropDownList ID="ddlNumberOfTexts" runat="server" CssClass="auto-style22" Height="20px" Width="170px">
                             <asp:ListItem>1000 Texts</asp:ListItem>
                             <asp:ListItem>2000 Texts</asp:ListItem>
                             <asp:ListItem>3000 Texts</asp:ListItem>

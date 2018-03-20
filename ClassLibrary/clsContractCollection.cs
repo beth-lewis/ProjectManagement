@@ -25,6 +25,25 @@ namespace PhonePalClassLibrary
 
             }
         }
+        public int Add()
+        {
+            //adds a new record to the database based on the values of mThisContract
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@ContractNo", mThisContract.contractNo);
+            DB.AddParameter("@ContractType", mThisContract.contractType);
+            DB.AddParameter("@CustomerNo", mThisContract.customerNo);
+            DB.AddParameter("@DataAllowance", mThisContract.dataAllowance);
+            DB.AddParameter("@Duration", mThisContract.duration);
+            DB.AddParameter("@NumberOfMinutes", mThisContract.numberOfMinutes);
+            DB.AddParameter("@NumberOfTexts", mThisContract.numberOfTexts);
+            DB.AddParameter("@PricePerMonth", mThisContract.pricePerMonth);
+            DB.AddParameter("@StaffNo", mThisContract.staffNo);
+            DB.AddParameter("@StartDate", mThisContract.startDate);
+            //execute the query return the primary key value
+            return DB.Execute("sproc_tblContracts_Insert");
+        }
         //public constructor for the class        
         public clsContractCollection()
         {
@@ -90,6 +109,7 @@ namespace PhonePalClassLibrary
                 mContractList = value;
             }
         }
+        //public property for ThisContract
         public clsContracts ThisContract
         {
             get

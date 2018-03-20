@@ -147,6 +147,52 @@ namespace PhonePalTest
             Assert.AreEqual(Contracts.Count, TestList.Count);
 
         }
-       
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsContracts AContract = new clsContracts();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 ContractNo = 1;
+            //invoke the method
+            Found = AContract.Find(ContractNo);
+            //test to see that the result is correct 
+            Assert.IsTrue(Found);
+        }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsContractCollection AllContracts = new clsContractCollection();
+            ////create the item of test data
+            clsContracts TestItem = new clsContracts();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.contractNo = 1;
+            TestItem.contractType = "Pay As You Go";
+            TestItem.customerNo = 1;
+            TestItem.dataAllowance = "5gb";
+            TestItem.duration = "2 Years";
+            TestItem.manufacturerNo = 1;
+            TestItem.numberOfMinutes = "600 Mins";
+            TestItem.numberOfTexts = "Unlimited";
+            TestItem.pricePerMonth = 30;
+            TestItem.staffNo = 1;
+            TestItem.startDate = DateTime.Now.Date;
+            //set ThisContract to the test data 
+            AllContracts.ThisContract = TestItem;
+            //add the record
+            PrimaryKey = AllContracts.Add();
+            //set the primary key of the test data
+            TestItem.contractNo = PrimaryKey;
+            //find the record
+            AllContracts.ThisContract.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllContracts.ThisContract, TestItem);
+        }
+
     }
 }
