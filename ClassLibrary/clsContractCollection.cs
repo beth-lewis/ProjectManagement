@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace PhonePalClassLibrary
 {
     public class clsContractCollection
     {
-        //private data member for allContracts List
-        private List<clsContracts> mAllContracts = new List<clsContracts>();
         //private data member for the list
         List<clsContracts> mContractList = new List<clsContracts>();
         //private data member thisContract
         clsContracts mThisContract = new clsContracts();
+        //private data member for the allContracts list
+        private List<clsContracts> mAllContracts = new List<clsContracts>();
         public int Count
         {
             get
@@ -62,31 +63,31 @@ namespace PhonePalClassLibrary
             }
         }       
 
-        public List<clsContracts> AllContracts
+       public List<clsContracts> AllContracts
         {
             get
             {
-                //return the private data member
+                //return the private data
                 return mAllContracts;
             }
             set
             {
-                //assign the incoming value to the private data member
                 mAllContracts = value;
             }
         }
+            
 
         public List<clsContracts> ContractList
         {
             get
             {
                 //return the private data
-                return ContractList;
+                return mContractList;
             }
             set
             {
                 //set the private data
-                ContractList = value;
+                mContractList = value;
             }
         }
         public clsContracts ThisContract
