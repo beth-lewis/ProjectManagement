@@ -7,8 +7,7 @@ namespace PhonePalTest
 {
     [TestClass]
     public class tstContractCollection
-    {   //create an instance of the class 
-        clsContractCollection AllContracts = new clsContractCollection();
+    {   
         //create some test data to assign to the property
         List<clsContracts> TestList = new List<clsContracts>();
       
@@ -42,9 +41,10 @@ namespace PhonePalTest
         [TestMethod]
         public void ThisContractPropertyOK()
         {
-           
-           //create some test data to assign to the property
-           clsContracts TestContract = new clsContracts();
+            //create an instance of the class 
+            clsContractCollection AllContracts = new clsContractCollection();
+            //create some test data to assign to the property
+            clsContracts TestContract = new clsContracts();
             //set the properties of the test object
             TestContract.contractNo = 1;
             TestContract.contractType = "Pay As You Go";
@@ -87,11 +87,39 @@ namespace PhonePalTest
             //assign the data to the property
             AllContracts.ContractList = TestList;
             //test to see that the two values are the same
-            Assert.AreEqual(AllContracts.Count, TestList);
+            Assert.AreEqual(AllContracts.Count, TestList.Count);
+        }
+        [TestMethod]
+        public void AllContractsOK()
+        {
+            //create an instance of the class
+            clsContractCollection Contracts = new clsContractCollection();
+            List<clsContracts> TestList = new List<clsContracts>();
+            //add an item to the list
+            clsContracts TestItem = new clsContracts();
+            //set it's properties
+            TestItem.contractNo = 1;
+            TestItem.contractType = "Pay As You Go";
+            TestItem.customerNo = 1;
+            TestItem.dataAllowance = "5gb";
+            TestItem.duration = "2 Years";
+            TestItem.manufacturerNo = 1;
+            TestItem.numberOfMinutes = "600 Mins";
+            TestItem.numberOfTexts = "Unlimited";
+            TestItem.pricePerMonth = 30;
+            TestItem.staffNo = 1;
+            TestItem.startDate = DateTime.Now.Date;
+            //add the item to the test list
+            TestList.Add(TestItem);
+            //assign data to the property
+            Contracts.AllContracts = TestList;
+            //test to see that the two values are the same
+            Assert.AreEqual(Contracts.AllContracts, TestList);
         }
         [TestMethod]
         public void CountMatchesList()
         {
+      
             clsContractCollection Contracts = new clsContractCollection();
             //create some test to assign to the property
             //in this case the data needs to be a list of objects
