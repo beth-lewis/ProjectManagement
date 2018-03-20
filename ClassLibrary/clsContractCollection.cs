@@ -10,6 +10,8 @@ namespace PhonePalClassLibrary
         private List<clsContracts> mAllContracts = new List<clsContracts>();
         //private data member for the list
         List<clsContracts> mContractList = new List<clsContracts>();
+        //private data member thisContract
+        clsContracts mThisContract = new clsContracts();
         public int Count
         {
             get
@@ -79,14 +81,26 @@ namespace PhonePalClassLibrary
             get
             {
                 //return the private data
-                return mContractList;
+                return ContractList;
             }
             set
             {
                 //set the private data
-                mContractList = value;
+                ContractList = value;
             }
         }
-        public clsContracts ThisContract { get; set; }
+        public clsContracts ThisContract
+        {
+            get
+            {
+                //return the private data member 
+                return mThisContract;
+            }
+            set
+            {
+                //set the private data
+                mThisContract = value;
+            }
+        }
     }
 }

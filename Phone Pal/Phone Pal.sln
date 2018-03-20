@@ -7,6 +7,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonePalTest", "..\PhonePal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonePalClassLibrary", "..\ClassLibrary\PhonePalClassLibrary.csproj", "{00CD69DD-EA31-40E1-94EB-6A5EF32AF636}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Phone Pal Website", "..\Phone Pal Website\", "{595ED680-4585-4A01-901E-0C782B247B28}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51431"
+		Debug.AspNetCompiler.PhysicalPath = "..\Phone Pal Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51431\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51431"
+		Release.AspNetCompiler.PhysicalPath = "..\Phone Pal Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51431\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51431"
+		SlnRelativePath = "..\Phone Pal Website\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +42,10 @@ Global
 		{00CD69DD-EA31-40E1-94EB-6A5EF32AF636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00CD69DD-EA31-40E1-94EB-6A5EF32AF636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00CD69DD-EA31-40E1-94EB-6A5EF32AF636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595ED680-4585-4A01-901E-0C782B247B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595ED680-4585-4A01-901E-0C782B247B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595ED680-4585-4A01-901E-0C782B247B28}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{595ED680-4585-4A01-901E-0C782B247B28}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

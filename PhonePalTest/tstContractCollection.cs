@@ -11,14 +11,16 @@ namespace PhonePalTest
         clsContractCollection AllContracts = new clsContractCollection();
         //create some test data to assign to the property
         List<clsContracts> TestList = new List<clsContracts>();
-        //create the item of test data
-        clsContracts TestItem = new clsContracts();
+      
 
 
         [TestMethod]
         public void ContractListOK()
         {
-
+            clsContractCollection AllContracts = new clsContractCollection();
+            List<clsContracts> TestList = new List<clsContracts>();
+            //create the item of test data
+            clsContracts TestItem = new clsContracts();
             TestItem.contractType = "Pay As You Go";
             TestItem.dataAllowance = "5gb";
             TestItem.numberOfMinutes = "600 Mins";
@@ -63,6 +65,10 @@ namespace PhonePalTest
         [TestMethod]
         public void ListAndCountOK()
         {
+            //create the item of test data
+            clsContracts TestItem = new clsContracts();
+            //create an instance of the class we want to create 
+            clsContractCollection AllContracts = new clsContractCollection();
             //create an item for the test data
             //here is the test data
             TestItem.contractNo = 1;
@@ -86,6 +92,7 @@ namespace PhonePalTest
         [TestMethod]
         public void CountMatchesList()
         {
+            clsContractCollection Contracts = new clsContractCollection();
             //create some test to assign to the property
             //in this case the data needs to be a list of objects
             List<clsContracts> TestList = new List<clsContracts>();
@@ -107,9 +114,9 @@ namespace PhonePalTest
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
-            AllContracts.AllContracts = TestList;
+            Contracts.AllContracts = TestList;
             //test to see that the two values are the same
-            Assert.AreEqual(AllContracts.Count, TestList.Count);
+            Assert.AreEqual(Contracts.Count, TestList.Count);
 
         }
        
