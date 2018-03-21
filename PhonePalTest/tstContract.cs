@@ -15,10 +15,6 @@ namespace PhonePalTest
         string SomeNumberOfTexts = "Unlimited";
         string SomePricePerMonth = "30";
         string SomeDuration = "2 Years";
-        string SomeContractNo = "1";
-        string SomeCustomerNo = "1";
-        string SomeManufacturerNo = "1";
-        string SomeStaffNo = "1";
         string TheStartDate = DateTime.Now.Date.ToString();
         //create an instance of the class we want to create
         clsContracts AContract = new clsContracts();
@@ -39,8 +35,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -55,9 +50,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "Pay As You Go";
             //assign data to the property
-            AContract.contractType = TestData;
+            AContract.ContractType = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.contractType, TestData);
+            Assert.AreEqual(AContract.ContractType, TestData);
         }
         [TestMethod]
         public void ContractTypeMinLessOne()
@@ -68,8 +63,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+              TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -84,9 +78,7 @@ namespace PhonePalTest
             Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
-              SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+              SomePricePerMonth, SomeDuration,TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -101,8 +93,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -117,8 +108,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -130,11 +120,10 @@ namespace PhonePalTest
             SomeContractType = SomeContractType.PadRight(30, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -149,8 +138,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -165,8 +153,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -181,8 +168,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -197,9 +183,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "5GB";
             //assign data to the property
-            AContract.dataAllowance = TestData;
+            AContract.DataAllowance = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.dataAllowance, TestData);
+            Assert.AreEqual(AContract.DataAllowance, TestData);
         }
 
         [TestMethod]
@@ -211,8 +197,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -227,8 +212,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -240,11 +224,10 @@ namespace PhonePalTest
             SomeDataAllowance = SomeDataAllowance.PadRight(2, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+            SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -259,8 +242,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -275,8 +257,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -292,8 +273,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -307,8 +287,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -320,11 +299,10 @@ namespace PhonePalTest
             SomeDataAllowance = SomeDataAllowance.PadRight(5, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -335,9 +313,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "600 Mins";
             //assign data to the property
-            AContract.numberOfMinutes = TestData;
+            AContract.NumberOfMinutes = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.numberOfMinutes, TestData);
+            Assert.AreEqual(AContract.NumberOfMinutes, TestData);
         }
         [TestMethod]
         public void NumberOfMinutesMinLessOne()
@@ -348,8 +326,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -364,8 +341,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -377,11 +353,10 @@ namespace PhonePalTest
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(2, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -393,11 +368,10 @@ namespace PhonePalTest
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(49, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -412,8 +386,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -425,11 +398,10 @@ namespace PhonePalTest
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(51, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -441,11 +413,10 @@ namespace PhonePalTest
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(500, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+           SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -457,11 +428,10 @@ namespace PhonePalTest
             SomeNumberOfMinutes = SomeNumberOfMinutes.PadRight(25, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+            SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -472,9 +442,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "Unlimited";
             //assign data to the property
-            AContract.numberOfTexts = TestData;
+            AContract.NumberOfTexts = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.numberOfTexts, TestData);
+            Assert.AreEqual(AContract.NumberOfTexts, TestData);
         }
 
         [TestMethod]
@@ -483,11 +453,10 @@ namespace PhonePalTest
             SomeNumberOfTexts = "";
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -502,8 +471,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -515,11 +483,10 @@ namespace PhonePalTest
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(2, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -534,8 +501,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -550,8 +516,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -566,8 +531,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -582,8 +546,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -596,11 +559,10 @@ namespace PhonePalTest
             SomeNumberOfTexts = SomeNumberOfTexts.PadRight(25, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -612,9 +574,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             decimal TestData = 30;
             //assign data to the property
-            AContract.pricePerMonth = TestData;
+            AContract.PricePerMonth = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.pricePerMonth, TestData);
+            Assert.AreEqual(AContract.PricePerMonth, TestData);
         }
         [TestMethod]
         public void PricePerMonthMinLessOne()
@@ -622,11 +584,10 @@ namespace PhonePalTest
             string SomePricePerMonth = "0";
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -640,8 +601,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -655,8 +615,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -670,8 +629,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -685,8 +643,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -700,8 +657,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -715,8 +671,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -731,8 +686,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -743,9 +697,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             string TestData = "12 Months";
             //assign data to the property
-            AContract.duration = TestData;
+            AContract.Duration = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.duration, TestData);
+            Assert.AreEqual(AContract.Duration, TestData);
         }
 
         [TestMethod]
@@ -757,8 +711,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -773,8 +726,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -789,8 +741,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -806,8 +757,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -823,8 +773,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -836,11 +785,10 @@ namespace PhonePalTest
             SomeDuration = SomeDuration.PadRight(21, 'a');
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -855,8 +803,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -872,8 +819,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -884,9 +830,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.contractNo = TestData;
+            AContract.ContractNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.contractNo, TestData);
+            Assert.AreEqual(AContract.ContractNo, TestData);
         }
 
 
@@ -896,9 +842,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.customerNo = TestData;
+            AContract.CustomerNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.customerNo, TestData);
+            Assert.AreEqual(AContract.CustomerNo, TestData);
         }
 
 
@@ -908,9 +854,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.manufacturerNo = TestData;
+            AContract.ManufacturerNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.manufacturerNo, TestData);
+            Assert.AreEqual(AContract.ManufacturerNo, TestData);
         }
 
 
@@ -920,9 +866,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign data to the property
-            AContract.staffNo = TestData;
+            AContract.StaffNo = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.staffNo, TestData);
+            Assert.AreEqual(AContract.StaffNo, TestData);
         }
 
 
@@ -932,9 +878,9 @@ namespace PhonePalTest
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign data to the property
-            AContract.startDate = TestData;
+            AContract.StartDate = TestData;
             //test to see that the 2 values are the same
-            Assert.AreEqual(AContract.startDate, TestData);
+            Assert.AreEqual(AContract.StartDate, TestData);
         }
         [TestMethod]
         public void StartDateMin()
@@ -944,13 +890,11 @@ namespace PhonePalTest
             //convert the date variable to a string variable
             string StartDate = TheStartDate.ToString();
             //invoke the method
-            //invoke the method
             Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -965,13 +909,11 @@ namespace PhonePalTest
             //convert the date variable to a string variable
             string StartDate = TheStartDate.ToString();
             //invoke the method
-            //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -985,13 +927,11 @@ namespace PhonePalTest
             //convert the date variable to a string variable
             string StartDate = TheStartDate.ToString();
             //invoke the method
-            //invoke the method
             Error = AContract.Valid(
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -1010,8 +950,7 @@ namespace PhonePalTest
               SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -1026,11 +965,10 @@ namespace PhonePalTest
             string StartDate = TheStartDate.ToString();
             //invoke the method
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
@@ -1041,11 +979,10 @@ namespace PhonePalTest
             //set the start date to a non date value
             string TheStartDate = "this is not a date";
             Error = AContract.Valid(
-              SomeContractType, SomeDataAllowance,
+             SomeContractType, SomeDataAllowance,
               SomeNumberOfMinutes, SomeNumberOfTexts,
               SomePricePerMonth, SomeDuration,
-              SomeContractNo, SomeCustomerNo, SomeManufacturerNo,
-              SomeStaffNo, TheStartDate
+             TheStartDate
               );
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");

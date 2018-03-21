@@ -7,42 +7,46 @@ namespace PhonePalClassLibrary
 {
     public class clsContractCollection
     {
+        //connect to the database
+        clsDataConnection DB = new clsDataConnection();
         //private data member for the list
         List<clsContracts> mContractList = new List<clsContracts>();
         //private data member thisContract
         clsContracts mThisContract = new clsContracts();
         //private data member for the allContracts list
         private List<clsContracts> mAllContracts = new List<clsContracts>();
-        public int Count
-        {
-            get
-            {
-                //return the count property of the private list
-                return mContractList.Count;
-            }
-            set
-            {
-
-            }
-        }
+      
         public int Add()
         {
             //adds a new record to the database based on the values of mThisContract
-            //connect to the database
-            clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@ContractNo", mThisContract.contractNo);
-            DB.AddParameter("@ContractType", mThisContract.contractType);
-            DB.AddParameter("@CustomerNo", mThisContract.customerNo);
-            DB.AddParameter("@DataAllowance", mThisContract.dataAllowance);
-            DB.AddParameter("@Duration", mThisContract.duration);
-            DB.AddParameter("@NumberOfMinutes", mThisContract.numberOfMinutes);
-            DB.AddParameter("@NumberOfTexts", mThisContract.numberOfTexts);
-            DB.AddParameter("@PricePerMonth", mThisContract.pricePerMonth);
-            DB.AddParameter("@StaffNo", mThisContract.staffNo);
-            DB.AddParameter("@StartDate", mThisContract.startDate);
+            DB.AddParameter("@ContractNo", mThisContract.ContractNo);//parameter for ContractNo
+            DB.AddParameter("@ContractType", mThisContract.ContractType);//parameter for Contract Type
+            DB.AddParameter("@CustomerNo", mThisContract.CustomerNo);//parameter for CustomerNo
+            DB.AddParameter("@DataAllowance", mThisContract.DataAllowance);//parameter for Data Allowance
+            DB.AddParameter("@Duration", mThisContract.Duration);//parameter for Duration
+            DB.AddParameter("@ManufacturerNo", mThisContract.ManufacturerNo);//parameter for Manufacturer No 
+            DB.AddParameter("@NumberOfMinutes", mThisContract.NumberOfMinutes);//parameter for Number Of Minutes
+            DB.AddParameter("@NumberOfTexts", mThisContract.NumberOfTexts);//parameter for Number Of Texts
+            DB.AddParameter("@PricePerMonth", mThisContract.PricePerMonth);//parameter for Price Per Month
+            DB.AddParameter("@StaffNo", mThisContract.StaffNo);//parameter for StaffNo
+            DB.AddParameter("@StartDate", mThisContract.StartDate);//parameter for Start Date
             //execute the query return the primary key value
             return DB.Execute("sproc_tblContracts_Insert");
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed by ThisContract
+            //set the parameters
+            DB.AddParameter("@ContractNo", mThisContract.ContractNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblContracts_Delete");
+        }
+
+        public void Update()
+        {
+
         }
         //public constructor for the class        
         public clsContractCollection()
@@ -63,26 +67,37 @@ namespace PhonePalClassLibrary
                 //create a blank contract 
                 clsContracts AContract = new clsContracts();
                 //read in the fields from the current record
-                AContract.contractNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ContractNo"]);
-                AContract.contractType = Convert.ToString(DB.DataTable.Rows[Index]["ContractType"]);
-                AContract.customerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
-                AContract.dataAllowance = Convert.ToString(DB.DataTable.Rows[Index]["DataAllowance"]);
-                AContract.duration = Convert.ToString(DB.DataTable.Rows[Index]["Duration"]);
-                AContract.manufacturerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ManufacturerNo"]);
-                AContract.numberOfMinutes = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfMinutes"]);
-                AContract.numberOfTexts = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfTexts"]);
-                AContract.pricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
-                AContract.staffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
-                AContract.startDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
+                AContract.ContractNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ContractNo"]);
+                AContract.ContractType = Convert.ToString(DB.DataTable.Rows[Index]["ContractType"]);
+                AContract.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
+                AContract.DataAllowance = Convert.ToString(DB.DataTable.Rows[Index]["DataAllowance"]);
+                AContract.Duration = Convert.ToString(DB.DataTable.Rows[Index]["Duration"]);
+                AContract.ManufacturerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ManufacturerNo"]);
+                AContract.NumberOfMinutes = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfMinutes"]);
+                AContract.NumberOfTexts = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfTexts"]);
+                AContract.PricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
+                AContract.StaffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
+                AContract.StartDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
                 //add the record to the private data member
                 mContractList.Add(AContract);
                 //point at the next record
                 Index++;
 
             }
-        }       
+        }
+        public int Count
+        {
+            get
+            {
+                //return the count property of the private list
+                return mContractList.Count;
+            }
+            set
+            {
 
-       public List<clsContracts> AllContracts
+            }
+        }
+        public List<clsContracts> AllContracts
         {
             get
             {

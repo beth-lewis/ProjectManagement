@@ -20,17 +20,17 @@ namespace PhonePalTest
             List<clsContracts> TestList = new List<clsContracts>();
             //create the item of test data
             clsContracts TestItem = new clsContracts();
-            TestItem.contractType = "Pay As You Go";
-            TestItem.dataAllowance = "5gb";
-            TestItem.numberOfMinutes = "600 Mins";
-            TestItem.numberOfTexts = "Unlimited";
-            TestItem.pricePerMonth = 30;
-            TestItem.duration = "2 Years";
-            TestItem.contractNo = 1;
-            TestItem.customerNo = 1;
-            TestItem.manufacturerNo = 1;
-            TestItem.staffNo = 1;
-            TestItem.startDate = DateTime.Now.Date;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.DataAllowance = "5gb";
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.Duration = "2 Years";
+            TestItem.ContractNo = 1;
+            TestItem.CustomerNo = 1;
+            TestItem.ManufacturerNo = 1;
+            TestItem.StaffNo = 1;
+            TestItem.StartDate = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -46,17 +46,17 @@ namespace PhonePalTest
             //create some test data to assign to the property
             clsContracts TestContract = new clsContracts();
             //set the properties of the test object
-            TestContract.contractNo = 1;
-            TestContract.contractType = "Pay As You Go";
-            TestContract.customerNo = 1;
-            TestContract.dataAllowance = "5gb";
-            TestContract.duration = "2 Years";
-            TestContract.manufacturerNo = 1;
-            TestContract.numberOfMinutes = "600 Mins";
-            TestContract.numberOfTexts = "Unlimited";
-            TestContract.pricePerMonth = 30;
-            TestContract.staffNo = 1;
-            TestContract.startDate = DateTime.Now.Date;
+            TestContract.ContractNo = 1;
+            TestContract.ContractType = "Pay As You Go";
+            TestContract.CustomerNo = 1;
+            TestContract.DataAllowance = "5gb";
+            TestContract.Duration = "2 Years";
+            TestContract.ManufacturerNo = 1;
+            TestContract.NumberOfMinutes = "600 Mins";
+            TestContract.NumberOfTexts = "Unlimited";
+            TestContract.PricePerMonth = 30;
+            TestContract.StaffNo = 1;
+            TestContract.StartDate = DateTime.Now.Date;
             //assign the data to the property
             AllContracts.ThisContract = TestContract;
            //test to see that the two values are the same
@@ -71,17 +71,17 @@ namespace PhonePalTest
             clsContractCollection AllContracts = new clsContractCollection();
             //create an item for the test data
             //here is the test data
-            TestItem.contractNo = 1;
-            TestItem.contractType = "Pay As You Go";
-            TestItem.customerNo = 1;
-            TestItem.dataAllowance = "5gb";
-            TestItem.duration = "2 Years";
-            TestItem.manufacturerNo = 1;
-            TestItem.numberOfMinutes = "600 Mins";
-            TestItem.numberOfTexts = "Unlimited";
-            TestItem.pricePerMonth = 30;
-            TestItem.staffNo = 1;
-            TestItem.startDate = DateTime.Now.Date;
+            TestItem.ContractNo = 1;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 1;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 1;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 1;
+            TestItem.StartDate = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -98,17 +98,17 @@ namespace PhonePalTest
             //add an item to the list
             clsContracts TestItem = new clsContracts();
             //set it's properties
-            TestItem.contractNo = 1;
-            TestItem.contractType = "Pay As You Go";
-            TestItem.customerNo = 1;
-            TestItem.dataAllowance = "5gb";
-            TestItem.duration = "2 Years";
-            TestItem.manufacturerNo = 1;
-            TestItem.numberOfMinutes = "600 Mins";
-            TestItem.numberOfTexts = "Unlimited";
-            TestItem.pricePerMonth = 30;
-            TestItem.staffNo = 1;
-            TestItem.startDate = DateTime.Now.Date;
+            TestItem.ContractNo = 1;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 1;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 1;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 1;
+            TestItem.StartDate = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign data to the property
@@ -128,17 +128,17 @@ namespace PhonePalTest
             //create the item of test data
             clsContracts TestItem = new clsContracts();
             //set its properties
-            TestItem.contractNo = 1;
-            TestItem.contractType = "Pay As You Go";
-            TestItem.customerNo = 1;
-            TestItem.dataAllowance = "5gb";
-            TestItem.duration = "2 Years";
-            TestItem.manufacturerNo = 1;
-            TestItem.numberOfMinutes = "600 Mins";
-            TestItem.numberOfTexts = "Unlimited";
-            TestItem.pricePerMonth = 30;
-            TestItem.staffNo = 1;
-            TestItem.startDate = DateTime.Now.Date;
+            TestItem.ContractNo = 1;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 1;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 1;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 1;
+            TestItem.StartDate = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -171,23 +171,23 @@ namespace PhonePalTest
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.contractNo = 1;
-            TestItem.contractType = "Pay As You Go";
-            TestItem.customerNo = 1;
-            TestItem.dataAllowance = "5gb";
-            TestItem.duration = "2 Years";
-            TestItem.manufacturerNo = 1;
-            TestItem.numberOfMinutes = "600 Mins";
-            TestItem.numberOfTexts = "Unlimited";
-            TestItem.pricePerMonth = 30;
-            TestItem.staffNo = 1;
-            TestItem.startDate = DateTime.Now.Date;
+            TestItem.ContractNo = 0;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 0;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 0;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 0;
+            TestItem.StartDate = DateTime.Now.Date;
             //set ThisContract to the test data 
             AllContracts.ThisContract = TestItem;
             //add the record
             PrimaryKey = AllContracts.Add();
             //set the primary key of the test data
-            TestItem.contractNo = PrimaryKey;
+            TestItem.ContractNo = PrimaryKey;
             //find the record
             AllContracts.ThisContract.Find(PrimaryKey);
             //test to see that the two values are the same

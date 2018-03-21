@@ -6,30 +6,248 @@ using System.Threading.Tasks;
 
 namespace PhonePalClassLibrary
 {
+  
     public class clsContracts
     {
-        public string contractType { get; set; }//property for Contract Type - data type string
-        public string dataAllowance { get; set; }//public property for Data Allowance - data type string
-        public string numberOfMinutes { get; set; }//public property for Number of Minutes - data type string
-        public string numberOfTexts { get; set; }//public property for Number of Texts - data type string
-        public decimal pricePerMonth { get; set; }//public property for Price Per Month - data type decimal
-        public int contractNo { get; set; }//public property for Contract No - data type int 
-        public int customerNo { get; set; }//public property for Customer No - data type int 
-        public int manufacturerNo { get; set; }//public property for Manufacturer No - data type int 
-        public string duration { get; set; }//public property for Duration - data type string
-        public int staffNo { get; set; }//public property for Staff No - data type int 
-        public DateTime startDate { get; set; }//public property for Start Date - data type string
+
+        //private Data member for ContractType Property
+        private string mContractType;
+
+        //public property for Contract Type
+        public string ContractType
+        {
+            get
+            {
+                //return the private data
+                return mContractType;
+            }
+            set
+            {
+                //set the private data 
+                mContractType = value;
+            }
+        }
+
+        //private Data member for Data Allowance Property
+        private string mDataAllowance;
+
+        //public property for Data Allowance
+        public string DataAllowance
+        {
+            get
+            {
+                //return the private data
+                return mDataAllowance;
+            }
+            set
+            {
+                //set the private data 
+                mDataAllowance = value;
+            }
+        }
+        //private Data member for Number Of Minutes Property
+        private string mNumberOfMinutes;
+
+        //public property for Number Of Minutes
+        public string NumberOfMinutes
+        {
+            get
+            {
+                //return the private data
+                return mNumberOfMinutes;
+            }
+            set
+            {
+                //set the private data 
+                mNumberOfMinutes = value;
+            }
+        }
+        //private Data member for Number Of Texts Property
+        private string mNumberOfTexts;
+
+        //public property for Number Of Texts
+        public string NumberOfTexts
+        {
+            get
+            {
+                //return the private data
+                return mNumberOfTexts;
+            }
+            set
+            {
+                //set the private data 
+                mNumberOfTexts = value;
+            }
+        }
+
+        //private Data member for Price Per Month Property
+        private decimal mPricePerMonth;
+
+        //public property for Price Per Month
+        public decimal PricePerMonth
+        {
+            get
+            {
+                //return the private data
+                return mPricePerMonth;
+            }
+            set
+            {
+                //set the private data 
+                mPricePerMonth = value;
+            }
+        }
+
+        //private Data member for Contract No Property
+        private Int32 mContractNo;
+
+        //public property for Contract No
+        public int ContractNo
+        {
+            get
+            {
+                //return the private data
+                return mContractNo;
+            }
+            set
+            {
+                //set the private data 
+                mContractNo = value;
+            }
+        }
+
+        //private Data member for Customer No Property
+        private Int32 mCustomerNo;
+
+        //public property for Customer No
+        public int CustomerNo
+        {
+            get
+            {
+                //return the private data
+                return mCustomerNo;
+            }
+            set
+            {
+                //set the private data 
+                mCustomerNo = value;
+            }
+        }
+
+        //private Data member for Manufacturer No Property
+        private Int32 mManufacturerNo;
+
+        //public property for Manufacturer No
+        public int ManufacturerNo
+        {
+            get
+            {
+                //return the private data
+                return mManufacturerNo;
+            }
+            set
+            {
+                //set the private data 
+                mManufacturerNo = value;
+            }
+        }
+        //private Data member for Duration Property
+        private string mDuration;
+
+        //public property for Duration
+        public string Duration
+        {
+            get
+            {
+                //return the private data
+                return mDuration;
+            }
+            set
+            {
+                //set the private data 
+                mDuration = value;
+            }
+        }
+
+        //private Data member for Staff No Property
+        private Int32 mStaffNo;
+
+        //public property for Staff No
+        public int StaffNo
+        {
+            get
+            {
+                //return the private data
+                return mStaffNo;
+            }
+            set
+            {
+                //set the private data
+                mStaffNo = value;
+            }
+        }
+
+        //private Data member for Start Date Property
+        private DateTime mStartDate;
+
+        //public property for Start Date
+        public DateTime StartDate
+        {
+            get
+            {
+                //return the private data
+                return mStartDate;
+            }
+            set
+            {
+                //set the private data
+                mStartDate = value;
+            }
+        }
+        public bool Find( int ContractNo)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the contract no to search for
+            DB.AddParameter("@ContractNo", ContractNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblContracts_FilterByContractNo");
+            //if one record is found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mContractNo = Convert.ToInt32(DB.DataTable.Rows[0]["ContractNo"]);
+                mContractType = Convert.ToString(DB.DataTable.Rows[0]["ContractType"]);
+                mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
+                mDataAllowance = Convert.ToString(DB.DataTable.Rows[0]["DataAllowance"]);
+                mDuration = Convert.ToString(DB.DataTable.Rows[0]["Duration"]);
+                mManufacturerNo = Convert.ToInt32(DB.DataTable.Rows[0]["ManufacturerNo"]);
+                mNumberOfMinutes = Convert.ToString(DB.DataTable.Rows[0]["NumberOfMinutes"]);
+                mNumberOfTexts = Convert.ToString(DB.DataTable.Rows[0]["NumberOfTexts"]);
+                mPricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[0]["PricePerMonth"]);
+                mStaffNo = Convert.ToInt32(DB.DataTable.Rows[0]["StaffNo"]);
+                mStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["StartDate"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+        }
+
         public string Valid(string SomeContractType,
                             string SomeDataAllowance, 
                             string SomeNumberOfMinutes,
                             string SomeNumberOfTexts,
                             string SomePricePerMonth, 
                             string SomeDuration,
-                            string SomeContractNo,
-                            string SomeCustomerNo,
-                            string SomeManufacturerNo,
+                            string TheStartDate,
                             string SomeStaffNo,
-                            string TheStartDate)
+                            string SomeManufacturerNo,
+                            string SomeCustomerNo)
 
         {
             //create a string variable to store the error
@@ -114,34 +332,28 @@ namespace PhonePalClassLibrary
                 //record the error
                 Error = Error + "The Duration must be less than 20 characters";
             }
+            //if StafNo is blank
+            if (SomeStaffNo == "")
+            {
+                //record the error
+                Error = Error + "The Staff No cannot Be Blank";
+            }
+            //if CustomerNo is blank
+            if (SomeCustomerNo == "")
+            {
+                //record the error
+                Error = Error + "The Customer No cannot Be Blank";
+            }
+            //if ManufacturerNo is blank
+            if (SomeManufacturerNo == "")
+            {
+                //record the error
+                Error = Error + "The ManufacturerNo cannot Be Blank";
+            }
 
-            //if the ManufacturerNo is blank
-            if (Convert.ToInt32(SomeManufacturerNo) == 0)
-            {
-                //record the error
-                Error = Error + "The Manufacturer No Cannot Be Blank";
-            }
-            //if the ContractNo is blank
-            if (Convert.ToInt32(SomeContractNo) == 0)
-            {
-                //record the error
-                Error = Error + "The Contract No Cannot Be Blank";
-            }
-            //if the CustomerNo is blank
-            if (Convert.ToInt32(SomeCustomerNo) == 0)
-            {
-                //record the error
-                Error = Error + "The Customer No Cannot Be Blank";
-            }
-            //if the StaffNo is blank
-            if (Convert.ToInt32(SomeStaffNo) == 0)
-            {
-                //record the error
-                Error = Error + "The Staff No Cannot Be Blank";
-            }
             try { 
             //copy the the startDate Value to the DateTemp Variable
-            DateTemp = Convert.ToDateTime(startDate);
+            DateTemp = Convert.ToDateTime(StartDate);
             if (DateTemp < DateTime.Now.Date)
             {
                 //record the error
@@ -160,10 +372,12 @@ namespace PhonePalClassLibrary
                 Error = Error + "The Date was not a valid date";
         }
             //return any error messages
-            return Error;
+            return Error + " ";
         }
+        
 
 
-    }
+
+}
     
     }

@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Phone Pal - Contracts</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" /><!--link to stlesheet-->
+    <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
     <style type="text/css">
         .auto-style1 {
             height: 393px;
@@ -28,106 +28,135 @@
         }
         .auto-style4 {
             position: absolute;
-            top: 241px;
-            left: 670px;
+            top: 311px;
+            left: 375px;
             z-index: 1;
             width: 160px;
-            bottom: 407px;
+            bottom: 337px;
             margin-top: 9px;
-        }
-        .auto-style7 {
-            position: absolute;
-            top: 295px;
-            left: 670px;
-            z-index: 1;
-        }
-        .auto-style8 {
-            position: absolute;
-            top: 328px;
-            left: 670px;
-            z-index: 1;
-            margin-top: 2px;
         }
         .auto-style13 {
             position: absolute;
-            top: 250px;
-            left: 560px;
-            z-index: 1;
-        }
-        .auto-style14 {
-            position: absolute;
-            top: 295px;
-            left: 575px;
-            z-index: 1;
-        }
-        .auto-style15 {
-            position: absolute;
-            top: 330px;
-            left: 530px;
+            top: 320px;
+            left: 245px;
             z-index: 1;
         }
         .auto-style16 {
             position: absolute;
-            top: 370px;
-            left: 545px;
+            top: 365px;
+            left: 245px;
             z-index: 1;
         }
         .auto-style17 {
             position: absolute;
-            top: 455px;
-            left: 530px;
+            top: 460px;
+            left: 240px;
             z-index: 1;
         }
         .auto-style18 {
             position: absolute;
-            top: 495px;
-            left: 520px;
+            top: 510px;
+            left: 230px;
             z-index: 1;
         }
         .auto-style19 {
             position: absolute;
-            top: 530px;
-            left: 525px;
+            top: 555px;
+            left: 230px;
             z-index: 1;
         }
         .auto-style9 {
             position: absolute;
             top: 370px;
-            left: 675px;
+            left: 380px;
             z-index: 1;
         }
         .auto-style20 {
             position: absolute;
             top: 410px;
-            left: 550px;
+            left: 245px;
             z-index: 1;
         }
         .auto-style10 {
             position: absolute;
             top: 410px;
-            left: 675px;
+            left: 375px;
             z-index: 1;
             width: 112px;
             height: 19px;
         }
         .auto-style12 {
             position: absolute;
-            top: 455px;
-            left: 675px;
+            top: 460px;
+            left: 375px;
             z-index: 1;
             width: 102px;
             height: 21px;
         }
         .auto-style21 {
             position: absolute;
-            top: 495px;
-            left: 685px;
+            top: 510px;
+            left: 400px;
             z-index: 1;
         }
         .auto-style22 {
             position: absolute;
-            top: 535px;
-            left: 680px;
+            top: 555px;
+            left: 400px;
+            z-index: 1;
+        }
+        .auto-style23 {
+            z-index: 1;
+            left: 355px;
+            top: 275px;
+            position: absolute;
+        }
+        .auto-style24 {
+            z-index: 1;
+            left: 255px;
+            top: 280px;
+            position: absolute;
+        }
+        .auto-style25 {
+            z-index: 1;
+            left: 645px;
+            top: 420px;
+            position: absolute;
+        }
+        .auto-style26 {
+            position: absolute;
+            top: 270px;
+            left: 700px;
+            z-index: 1;
+        }
+        .auto-style27 {
+            position: absolute;
+            top: 270px;
+            left: 615px;
+            z-index: 1;
+        }
+        .auto-style28 {
+            position: absolute;
+            top: 305px;
+            left: 700px;
+            z-index: 1;
+        }
+        .auto-style29 {
+            position: absolute;
+            top: 345px;
+            left: 700px;
+            z-index: 1;
+        }
+        .auto-style30 {
+            position: absolute;
+            top: 305px;
+            left: 570px;
+            z-index: 1;
+        }
+        .auto-style31 {
+            position: absolute;
+            top: 350px;
+            left: 600px;
             z-index: 1;
         }
     </style>
@@ -139,7 +168,7 @@
         <div id="header">
             <table style="width:360px">
                 <tr>
-                         <td><img src="molumen_phone_icon.png" height="50" width="50" /></td>
+                         <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
                 </tr>
             </table>
@@ -173,11 +202,9 @@
                       
 
 
-                        <asp:Button ID="btnSave" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style2" Text="Save" />
+                        <asp:Button ID="btnSave" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style2" Text="Save" OnClick="btnSave_Click" />
                         <asp:Button ID="btnGoBack" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style3" Text="Go Back" OnClick="btnGoBack_Click" />
-                        <asp:TextBox ID="txtCustomerNo" runat="server" CssClass="auto-style4" Font-Bold="True"></asp:TextBox>
-                        <asp:TextBox ID="txtStaffNo" runat="server" CssClass="auto-style7" Font-Bold="True" Width="160px"></asp:TextBox>
-                        <asp:TextBox ID="txtManufacturerNo" runat="server" CssClass="auto-style8" Font-Bold="True" Width="160px" Wrap="False"></asp:TextBox>
+                        <asp:TextBox ID="txtPricePerMonth" runat="server" CssClass="auto-style4" Font-Bold="False" TextMode="Number"></asp:TextBox>
                         <asp:DropDownList ID="ddlContractType" runat="server" AutoPostBack="True" CssClass="auto-style9">
                             <asp:ListItem Value="1">Monthly</asp:ListItem>
                             <asp:ListItem>Pay As You Go</asp:ListItem>
@@ -186,9 +213,7 @@
                         </asp:DropDownList>
                 <br />
 
-                        <asp:Label ID="lblCustomerNo" runat="server" CssClass="auto-style13" Font-Bold="True" Text="Customer No"></asp:Label>
-                        <asp:Label ID="lblStaffNo" runat="server" CssClass="auto-style14" Font-Bold="True" Text="Staff No"></asp:Label>
-                        <asp:Label ID="lblManufacturerNo" runat="server" CssClass="auto-style15" Font-Bold="True" Text="Manufacturer No"></asp:Label>
+                        <asp:Label ID="lblPricePerMonth" runat="server" CssClass="auto-style13" Font-Bold="True" Text="Price Per Month"></asp:Label>
                         <asp:Label ID="lblDataAllowance" runat="server" CssClass="auto-style17" Font-Bold="True" Text="Data Allowance"></asp:Label>
                         <asp:Label ID="lblDuration" runat="server" CssClass="auto-style20" Font-Bold="True" Text="Duration"></asp:Label>
                         <asp:Label ID="lblNumberOfMinutes" runat="server" CssClass="auto-style18" Font-Bold="True" Text="Number Of Minutes"></asp:Label>
@@ -229,6 +254,19 @@
                             <asp:ListItem>5000 Texts+</asp:ListItem>
                             <asp:ListItem>Unlimited</asp:ListItem>
                         </asp:DropDownList>
+
+                        <asp:Label ID="lblError" runat="server" CssClass="auto-style25"></asp:Label>
+
+                        <asp:TextBox ID="txtStaffNo" runat="server" CssClass="auto-style26"></asp:TextBox>
+                        <asp:Label ID="lblStaffNo" runat="server" CssClass="auto-style27" Text="Staff No"></asp:Label>
+
+                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="auto-style23" TextMode="DateTime" Width="160px"></asp:TextBox>
+                        <asp:Label ID="lblStartDate" runat="server" Text="Start Date" CssClass="auto-style24" Font-Bold="True"></asp:Label>
+
+                        <asp:TextBox ID="txtManufacturerNo" runat="server" CssClass="auto-style28"></asp:TextBox>
+                        <asp:TextBox ID="txtCustomerNo" runat="server" CssClass="auto-style29"></asp:TextBox>
+                        <asp:Label ID="lblCustomerNo" runat="server" CssClass="auto-style31" Text="CustomerNo"></asp:Label>
+                        <asp:Label ID="lblManufacturerNo" runat="server" CssClass="auto-style30" Text="Manufacturer No"></asp:Label>
 
             </div>
 
