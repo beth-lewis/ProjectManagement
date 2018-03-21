@@ -56,6 +56,12 @@
             width: 397px;
             height: 389px;
         }
+        .auto-style10 {
+            position: absolute;
+            top: 545px;
+            left: 800px;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -94,13 +100,14 @@
 
                     <p class="auto-style7">
                         <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9"></asp:ListBox>
+                        <asp:Label ID="lblError" runat="server" CssClass="auto-style10"></asp:Label>
                         </p>
 
 
                 </center>
                 <br />
                 <br />
-                <asp:Button ID="btnCancelContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style2" Font-Bold="True" Height="40px" OnClick="btnCancelContract_Click" Text="Cancel Contract" Width="133px" BorderColor="#41719C" />
+                <asp:Button ID="btnDeleteContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style2" Font-Bold="True" Height="40px" OnClick="btnDeleteContract_Click" Text="Delete Contract" Width="133px" BorderColor="#41719C" />
                 
             </div>
 

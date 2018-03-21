@@ -171,16 +171,16 @@ namespace PhonePalTest
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.ContractNo = 0;
+            TestItem.ContractNo = 1;
             TestItem.ContractType = "Pay As You Go";
-            TestItem.CustomerNo = 0;
+            TestItem.CustomerNo = 2;
             TestItem.DataAllowance = "5gb";
             TestItem.Duration = "2 Years";
-            TestItem.ManufacturerNo = 0;
+            TestItem.ManufacturerNo = 2;
             TestItem.NumberOfMinutes = "600 Mins";
             TestItem.NumberOfTexts = "Unlimited";
             TestItem.PricePerMonth = 30;
-            TestItem.StaffNo = 0;
+            TestItem.StaffNo = 2;
             TestItem.StartDate = DateTime.Now.Date;
             //set ThisContract to the test data 
             AllContracts.ThisContract = TestItem;
@@ -192,6 +192,42 @@ namespace PhonePalTest
             AllContracts.ThisContract.Find(PrimaryKey);
             //test to see that the two values are the same
             Assert.AreEqual(AllContracts.ThisContract, TestItem);
+        }
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsContractCollection AllContracts = new clsContractCollection();
+            ////create the item of test data
+            clsContracts TestItem = new clsContracts();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ContractNo = 1;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 2;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 2;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 2;
+            TestItem.StartDate = DateTime.Now.Date;
+            //set ThisContract to the test data 
+            AllContracts.ThisContract = TestItem;
+            //add the record
+            PrimaryKey = AllContracts.Add();
+            //set the primary key of the test data
+            TestItem.ContractNo = PrimaryKey;
+            //find the record
+            AllContracts.ThisContract.Find(PrimaryKey);
+            //delete the record
+            AllContracts.Delete();
+            //now found the record
+            Boolean Found = AllContracts.ThisContract.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
         }
 
     }

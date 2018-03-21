@@ -52,15 +52,31 @@ public partial class Contract : System.Web.UI.Page
         //redirects to the upgrade contract page
         Response.Redirect("Upgrade Contract.aspx");
     }
-    protected void btnCancelContract_Click(object sender, EventArgs e)
-    {
-        //redirects to the cancel contract page
-       Response.Redirect("Cancel Contract.aspx");
-    }
 
     protected void btnFindAContract_Click(object sender, EventArgs e)
     {
         //redirects to the find contract page
         Response.Redirect("Find A Contract.aspx");
+    }
+
+    protected void btnDeleteContract_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be deleted
+        Int32 ContractNo;
+        //if a record has been selected from the list
+        if (lstContracts.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to delete
+            ContractNo = Convert.ToInt32(lstContracts.SelectedValue);
+            //store the data in the session object
+            Session["ContractNo"] = ContractNo;
+            //redirects to the cancel contract page
+            Response.Redirect("Delete.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
     }
 }

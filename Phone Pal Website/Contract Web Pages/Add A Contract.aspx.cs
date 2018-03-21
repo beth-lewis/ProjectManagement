@@ -27,6 +27,8 @@ public partial class Add_A_Contract : System.Web.UI.Page
     //function for adding new contracts
     void Add()
     {
+        DateTime DateTemp;
+        DateTemp = DateTime.Now.Date;
         //create an instance of the contracts
         clsContractCollection Contracts = new clsContractCollection();
         //validate the data on the web form
@@ -37,7 +39,7 @@ public partial class Add_A_Contract : System.Web.UI.Page
              ddlNumberOfTexts.Text,
              txtPricePerMonth.Text,
              ddlDuration.Text,
-             txtStartDate.Text,
+             DateTemp.ToString(),
              txtStaffNo.Text,
              txtManufacturerNo.Text,
              txtCustomerNo.Text);
@@ -46,12 +48,12 @@ public partial class Add_A_Contract : System.Web.UI.Page
         {
             //get the data entered by the user
             Contracts.ThisContract.PricePerMonth = Convert.ToDecimal(txtPricePerMonth.Text);
-            Contracts.ThisContract.ContractType = ddlContractType.Text;
-            Contracts.ThisContract.Duration = ddlDuration.Text;
-            Contracts.ThisContract.DataAllowance = ddlDataAllowance.Text;
-            Contracts.ThisContract.NumberOfMinutes = ddlNumberOfMins.Text;
-            Contracts.ThisContract.NumberOfTexts = ddlNumberOfTexts.Text;
-            Contracts.ThisContract.StartDate = Convert.ToDateTime(txtStartDate.Text);
+            Contracts.ThisContract.ContractType = ddlContractType.SelectedItem.Text;
+            Contracts.ThisContract.Duration = ddlDuration.SelectedItem.Text;
+            Contracts.ThisContract.DataAllowance = ddlDataAllowance.SelectedItem.Text;
+            Contracts.ThisContract.NumberOfMinutes = ddlNumberOfMins.SelectedItem.Text;
+            Contracts.ThisContract.NumberOfTexts = ddlNumberOfTexts.SelectedItem.Text;
+            Contracts.ThisContract.StartDate = DateTemp.Date;
             Contracts.ThisContract.CustomerNo = Convert.ToInt32(txtCustomerNo.Text);
             Contracts.ThisContract.ManufacturerNo = Convert.ToInt32(txtManufacturerNo.Text);
             Contracts.ThisContract.StaffNo = Convert.ToInt32(txtStaffNo.Text);
@@ -63,7 +65,7 @@ public partial class Add_A_Contract : System.Web.UI.Page
         else
         {
             //report an error
-            lblError.Text = "There were problems with the data entered" + Error;
+            lblError.Text = "There were problems with the data entered" + " " + Error;
         }
     }
 

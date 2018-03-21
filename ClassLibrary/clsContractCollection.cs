@@ -20,7 +20,6 @@ namespace PhonePalClassLibrary
         {
             //adds a new record to the database based on the values of mThisContract
             //set the parameters for the stored procedure
-            DB.AddParameter("@ContractNo", mThisContract.ContractNo);//parameter for ContractNo
             DB.AddParameter("@ContractType", mThisContract.ContractType);//parameter for Contract Type
             DB.AddParameter("@CustomerNo", mThisContract.CustomerNo);//parameter for CustomerNo
             DB.AddParameter("@DataAllowance", mThisContract.DataAllowance);//parameter for Data Allowance
