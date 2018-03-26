@@ -13,3 +13,6 @@ D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\bin\D
 D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\bin\Debug\PhonePalTest.pdb
 D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\bin\Debug\ClassLibrary.dll
 D:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\bin\Debug\ClassLibrary.pdb
+F:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\obj\Debug\PhonePalTest.csprojResolveAssemblyReference.cache
+F:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\obj\Debug\PhonePalTest.dll
+F:\DMU\DMU Computing BSc\Year 2\Project Management\MyNewClone\PhonePalTest\obj\Debug\PhonePalTest.pdb
