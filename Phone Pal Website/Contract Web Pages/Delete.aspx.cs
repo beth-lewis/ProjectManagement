@@ -15,10 +15,10 @@ public partial class Contract_Web_Pages_Delete : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //get the number of the contract to be deleted from the session object
-        ContractNo = Convert.ToInt32(Session["ContractNo"]);
+        ContractNo = (Int32)Session["x"];
     }
 
-    void DeleteContracts()
+    void DeleteContract()
     {
         //function to delete the selected record
 
@@ -35,7 +35,7 @@ public partial class Contract_Web_Pages_Delete : System.Web.UI.Page
     protected void btnDeleteYes_Click(object sender, EventArgs e)
     {
         //delete the record
-        DeleteContracts();
+        DeleteContract();
         //redirect to the main contract page
         Response.Redirect("Main Page Contract.aspx");
     }

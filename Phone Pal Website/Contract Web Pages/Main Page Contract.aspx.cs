@@ -46,11 +46,13 @@ public partial class Contract : System.Web.UI.Page
         //redirects to the add contract page
         Response.Redirect("Add A Contract.aspx");
     }
-
+    //event handler for upgrade contract
     protected void btnUpgradeContract_Click(object sender, EventArgs e)
     {
-        //redirects to the upgrade contract page
-        Response.Redirect("Upgrade Contract.aspx");
+        //var to store the primary key value of recor to be edited
+        Int32 ContractNo;
+        //if a record has been selected from the list
+
     }
 
     protected void btnFindAContract_Click(object sender, EventArgs e)
@@ -69,7 +71,7 @@ public partial class Contract : System.Web.UI.Page
             //get the primary key value of the record to delete
             ContractNo = Convert.ToInt32(lstContracts.SelectedValue);
             //store the data in the session object
-            Session["ContractNo"] = ContractNo;
+            Session["x"] = ContractNo;
             //redirects to the cancel contract page
             Response.Redirect("Delete.aspx");
         }

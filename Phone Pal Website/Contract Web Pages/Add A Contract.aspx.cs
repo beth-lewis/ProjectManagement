@@ -30,9 +30,9 @@ public partial class Add_A_Contract : System.Web.UI.Page
         DateTime DateTemp;
         DateTemp = DateTime.Now.Date;
         //create an instance of the contracts
-        clsContractCollection Contracts = new clsContractCollection();
+        PhonePalClassLibrary.clsContractCollection ContractList = new PhonePalClassLibrary.clsContractCollection();
         //validate the data on the web form
-        String Error = Contracts.ThisContract.Valid(
+        String Error = ContractList.ThisContract.Valid(
              ddlContractType.Text,
              ddlDataAllowance.Text,
              ddlNumberOfMins.Text,
@@ -47,18 +47,18 @@ public partial class Add_A_Contract : System.Web.UI.Page
         if (Error == "")
         {
             //get the data entered by the user
-            Contracts.ThisContract.PricePerMonth = Convert.ToDecimal(txtPricePerMonth.Text);
-            Contracts.ThisContract.ContractType = ddlContractType.SelectedItem.Text;
-            Contracts.ThisContract.Duration = ddlDuration.SelectedItem.Text;
-            Contracts.ThisContract.DataAllowance = ddlDataAllowance.SelectedItem.Text;
-            Contracts.ThisContract.NumberOfMinutes = ddlNumberOfMins.SelectedItem.Text;
-            Contracts.ThisContract.NumberOfTexts = ddlNumberOfTexts.SelectedItem.Text;
-            Contracts.ThisContract.StartDate = DateTemp.Date;
-            Contracts.ThisContract.CustomerNo = Convert.ToInt32(txtCustomerNo.Text);
-            Contracts.ThisContract.ManufacturerNo = Convert.ToInt32(txtManufacturerNo.Text);
-            Contracts.ThisContract.StaffNo = Convert.ToInt32(txtStaffNo.Text);
+            ContractList.ThisContract.PricePerMonth = Convert.ToInt32(txtPricePerMonth.Text);
+            ContractList.ThisContract.ContractType = ddlContractType.SelectedItem.Text;
+            ContractList.ThisContract.Duration = ddlDuration.SelectedItem.Text;
+            ContractList.ThisContract.DataAllowance = ddlDataAllowance.SelectedItem.Text;
+            ContractList.ThisContract.NumberOfMinutes = ddlNumberOfMins.SelectedItem.Text;
+            ContractList.ThisContract.NumberOfTexts = ddlNumberOfTexts.SelectedItem.Text;
+            ContractList.ThisContract.StartDate = DateTemp.Date.Date;
+            ContractList.ThisContract.CustomerNo = Convert.ToInt32(txtCustomerNo.Text);
+            ContractList.ThisContract.ManufacturerNo = Convert.ToInt32(txtManufacturerNo.Text);
+            ContractList.ThisContract.StaffNo = Convert.ToInt32(txtStaffNo.Text);
             //add the record
-            Contracts.Add();
+            ContractList.Add();
             //redirect back to the main contract page
             Response.Redirect("Main Page Contract.aspx");
         }
@@ -73,7 +73,7 @@ public partial class Add_A_Contract : System.Web.UI.Page
     {
         //add the new record
         Add();
-        //redirect back to the main contract page
+        //redirect 
         Response.Redirect("Main Page Contract.aspx");
     }
 }

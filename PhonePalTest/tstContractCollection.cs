@@ -230,5 +230,52 @@ namespace PhonePalTest
             Assert.IsFalse(Found);
         }
 
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsContractCollection AllContracts = new clsContractCollection();
+            ////create the item of test data
+            clsContracts TestItem = new clsContracts();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ContractNo = 1;
+            TestItem.ContractType = "Pay As You Go";
+            TestItem.CustomerNo = 2;
+            TestItem.DataAllowance = "5gb";
+            TestItem.Duration = "2 Years";
+            TestItem.ManufacturerNo = 2;
+            TestItem.NumberOfMinutes = "600 Mins";
+            TestItem.NumberOfTexts = "Unlimited";
+            TestItem.PricePerMonth = 30;
+            TestItem.StaffNo = 2;
+            TestItem.StartDate = DateTime.Now.Date;
+            //set to thisContract to the test data
+            AllContracts.ThisContract = TestItem;
+            //add the record
+            PrimaryKey = AllContracts.Add();
+            //set the primary key of the test data
+            TestItem.ContractNo = PrimaryKey;
+            //modify the test
+            TestItem.ContractType = "Sim Free";
+            TestItem.CustomerNo = 3;
+            TestItem.Duration = "1 Years";
+            TestItem.ManufacturerNo = 3;
+            TestItem.NumberOfMinutes = "100 Mins";
+            TestItem.NumberOfTexts = "600 Texts";
+            TestItem.PricePerMonth = 50;
+            TestItem.StaffNo = 6;
+            TestItem.StartDate = DateTime.Now.Date;
+            //set the record based on the new test data
+            AllContracts.ThisContract = TestItem;
+            //update the record
+            AllContracts.Update();
+            //find the record
+            AllContracts.ThisContract.Find(PrimaryKey);
+            //test to see if ThisContract matches the test data
+            Assert.AreEqual(AllContracts.ThisContract, TestItem);
+        }
+
     }
 }

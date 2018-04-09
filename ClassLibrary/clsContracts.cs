@@ -353,7 +353,7 @@ namespace PhonePalClassLibrary
 
             try { 
             //copy the the startDate Value to the DateTemp Variable
-            DateTemp = Convert.ToDateTime(StartDate);
+            DateTemp = Convert.ToDateTime(TheStartDate);
             if (DateTemp < DateTime.Now.Date)
             {
                 //record the error
@@ -372,7 +372,7 @@ namespace PhonePalClassLibrary
                 Error = Error + "The Date was not a valid date";
         }
             //return any error messages
-            return Error + " ";
+            return Error + "";
         }
         
 

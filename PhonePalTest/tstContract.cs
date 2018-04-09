@@ -1352,8 +1352,8 @@ namespace PhonePalTest
             Int32 ContractNo = 1;
             //invoke method
             Found = AContract.Find(ContractNo);
-            //check the contract no
-            if (AContract.ContractType != "Monthly")
+            //check the contract type
+            if (AContract.ContractType != "Pay As You Go")
             {
                 OK = false;
             }
@@ -1361,6 +1361,125 @@ namespace PhonePalTest
             Assert.IsTrue(OK);
 
         }
+        [TestMethod]
+        public void TestDataAllowanceFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the data allowance
+            if (AContract.DataAllowance != "6Gb")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
 
+        }
+        [TestMethod]
+        public void TestDurationFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the duration
+            if (AContract.Duration != "1 Year")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestNumberOfMinutesFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the Number Of Minutes
+            if (AContract.NumberOfMinutes != "600 Mins")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestNumberOfTextsFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the Number Of Texts
+            if (AContract.NumberOfTexts != "5000 Texts")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestPricePerMonthFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the price per month
+            if (AContract.PricePerMonth != 20)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestStartDateFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the startdate
+            if (AContract.StartDate != Convert.ToDateTime("09/04/2018"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
     }
 }

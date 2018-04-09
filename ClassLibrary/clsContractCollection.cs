@@ -36,6 +36,9 @@ namespace PhonePalClassLibrary
 
         public void Delete()
         {
+            //deletes record point tp by thiscontract
+            //connect to database
+            clsDataConnection DB = new clsDataConnection();
             //deletes the record pointed by ThisContract
             //set the parameters
             DB.AddParameter("@ContractNo", mThisContract.ContractNo);
@@ -45,7 +48,22 @@ namespace PhonePalClassLibrary
 
         public void Update()
         {
-
+            //update an existing record based on the values of ThisContract    
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection(); 
+            //set the parameters for the stored procedure
+            DB.AddParameter("@ContractType", mThisContract.ContractType);//parameter for Contract Type
+            DB.AddParameter("@CustomerNo", mThisContract.CustomerNo);//parameter for CustomerNo
+            DB.AddParameter("@DataAllowance", mThisContract.DataAllowance);//parameter for Data Allowance
+            DB.AddParameter("@Duration", mThisContract.Duration);//parameter for Duration
+            DB.AddParameter("@ManufacturerNo", mThisContract.ManufacturerNo);//parameter for Manufacturer No 
+            DB.AddParameter("@NumberOfMinutes", mThisContract.NumberOfMinutes);//parameter for Number Of Minutes
+            DB.AddParameter("@NumberOfTexts", mThisContract.NumberOfTexts);//parameter for Number Of Texts
+            DB.AddParameter("@PricePerMonth", mThisContract.PricePerMonth);//parameter for Price Per Month
+            DB.AddParameter("@StaffNo", mThisContract.StaffNo);//parameter for StaffNo
+            DB.AddParameter("@StartDate", mThisContract.StartDate);//parameter for Start Date
+            //execute the stored procedure
+            DB.Execute("sproc_tblContracts_Update");   
         }
         //public constructor for the class        
         public clsContractCollection()

@@ -105,12 +105,6 @@
             left: 400px;
             z-index: 1;
         }
-        .auto-style23 {
-            z-index: 1;
-            left: 355px;
-            top: 275px;
-            position: absolute;
-        }
         .auto-style24 {
             z-index: 1;
             left: 255px;
@@ -119,8 +113,8 @@
         }
         .auto-style25 {
             z-index: 1;
-            left: 645px;
-            top: 420px;
+            left: 585px;
+            top: 60px;
             position: absolute;
         }
         .auto-style26 {
@@ -157,6 +151,14 @@
             position: absolute;
             top: 350px;
             left: 600px;
+            z-index: 1;
+        }
+        .auto-style32 {
+            width: 334px;
+            height: 297px;
+            position: absolute;
+            top: 270px;
+            left: 875px;
             z-index: 1;
         }
     </style>
@@ -260,13 +262,23 @@
                         <asp:TextBox ID="txtStaffNo" runat="server" CssClass="auto-style26"></asp:TextBox>
                         <asp:Label ID="lblStaffNo" runat="server" CssClass="auto-style27" Text="Staff No"></asp:Label>
 
-                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="auto-style23" TextMode="DateTime" Width="160px"></asp:TextBox>
                         <asp:Label ID="lblStartDate" runat="server" Text="Start Date" CssClass="auto-style24" Font-Bold="True"></asp:Label>
 
                         <asp:TextBox ID="txtManufacturerNo" runat="server" CssClass="auto-style28"></asp:TextBox>
                         <asp:TextBox ID="txtCustomerNo" runat="server" CssClass="auto-style29"></asp:TextBox>
                         <asp:Label ID="lblCustomerNo" runat="server" CssClass="auto-style31" Text="CustomerNo"></asp:Label>
                         <asp:Label ID="lblManufacturerNo" runat="server" CssClass="auto-style30" Text="Manufacturer No"></asp:Label>
+
+                        <asp:Calendar ID="StartDateCalendar" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" CssClass="auto-style32" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                            <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                            <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                            <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                            <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                            <WeekendDayStyle BackColor="#CCCCFF" />
+                        </asp:Calendar>
 
             </div>
 
