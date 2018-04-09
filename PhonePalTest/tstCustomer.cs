@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PhonePalTest
@@ -301,9 +304,161 @@ namespace PhonePalTest
             Assert.IsTrue(OK);
         }
 
-        private bool Find(object customerNo)
+        namespace Class_Library
+    {
+        public class clsAddress
         {
-            throw new NotImplementedException();
+            //private data member for the AddressNo property
+            private Int32 mAddressNo;
+            //private data member for HouseNo;
+            private string mHouseNo;
+            //private data member for street
+            private string mStreet;
+            //private data member for town
+            private string mTown;
+            //private data member for post code
+            private string mPostCode;
+            //private data member for county no
+            private Int32 mCountyNo;
+            //private date added data member 
+            private DateTime mDateAdded;
+            //private data member for active
+            private Boolean mActive;
+
+            //public property for active
+            public bool Active
+            {
+                get
+                {
+                    //return the private data
+                    return mActive;
+                }
+                set
+                {
+                    //set the private data
+                    mActive = value;
+                }
+            }
+
+            //public property for data added
+            public DateTime DateAdded
+            {
+                get
+                {
+                    //return the private data
+                    return mDateAdded;
+                }
+                set
+                {
+                    //set the private data
+                    mDateAdded = value;
+                }
+            }
+
+            //public property for the address number 
+            public int AddressNo
+            {
+                get
+                {
+                    //return the private data
+                    return mAddressNo;
+                }
+                set
+                {
+                    //set the value of the private data member
+                    mAddressNo = value;
+                }
+            }
+            
+            //public property for county no
+            public int CountyNo
+            {
+                get
+                {
+                    //return the private data
+                    return mCountyNo;
+                }
+                set
+                {
+                    //set the private data
+                    mCountyNo = value;
+                }
+            }
+            //public property for house no
+            public string HouseNo
+            {
+                get
+                {
+                    //return private data
+                    return mHouseNo;
+                }
+                set
+                {
+                    //set the private data 
+                    mHouseNo = value;
+                }
+            }
+
+            //public property for post code
+            public string PostCode
+            {
+                get
+                {
+                    //return the private data
+                    return mPostCode;
+                }
+                set
+                {
+                    //set the private data
+                    mPostCode = value;
+                }
+            }
+
+            //public data member for street
+            public string Street
+            {
+                get
+                {
+                    //return the private data
+                    return mStreet;
+                }
+                set
+                {
+                    //set the private data
+                    mStreet = value;
+                }
+            }
+
+            //public data member for Town
+            public string Town
+            {
+                get
+                {
+                    //return the private data
+                    return mTown;
+                }
+                set
+                {
+                    //set the private data
+                    mTown = value;
+                }
+            }
+        }
+    }
+        private bool Find(int customerNo)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the address no to search for
+            DB.AddParameter("@AddressNo", AddressNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblAddress_FilterByAddressNo");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members 
+                mAddressNo = Convert 
+            }
         }
 
        
