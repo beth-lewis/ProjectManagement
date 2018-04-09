@@ -6,11 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PhonePalClassLibrary;
 
-public partial class Add_A_Contract : System.Web.UI.Page
+public partial class A_Contract : System.Web.UI.Page
 {
+    //variable to store the primary key with page level scope
+    Int32 ContractNo;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //get the number of the contract to be processed
+        ContractNo = Convert.ToInt32(Session["ContractNo"]);
+        if (IsPostBack == false)
+        {
+            //populat the list contracts
+        }
     }
 
     protected void btnView_Click(object sender, EventArgs e)

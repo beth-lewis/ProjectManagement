@@ -8,6 +8,7 @@ using PhonePalClassLibrary;
 
 public partial class Contract : System.Web.UI.Page
 {
+  
     //this function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -52,6 +53,20 @@ public partial class Contract : System.Web.UI.Page
         //var to store the primary key value of recor to be edited
         Int32 ContractNo;
         //if a record has been selected from the list
+        if (lstContracts.SelectedIndex != -1)
+        {
+            //get the primary key vale of the record to edit
+            ContractNo = Convert.ToInt32(lstContracts.SelectedValue);
+            //store the data in the session object
+            Session["ContractNo"] = ContractNo;
+            //redirect to upgrade contract page
+            Response.Redirect("AContract.aspx");
+        }
+        else//if no contract has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
 
     }
 

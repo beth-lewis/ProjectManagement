@@ -47,7 +47,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
       
        
@@ -103,7 +103,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMinPlusOne()
@@ -124,7 +124,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxLessOne()
@@ -145,7 +145,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxBoundary()
@@ -166,7 +166,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxPlusOne()
@@ -208,7 +208,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractTypeMaxExtreme()
@@ -285,7 +285,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMinPlusOne()
@@ -306,7 +306,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMaxLessOne()
@@ -327,7 +327,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DataAllowanceMaxBoundary()
@@ -348,7 +348,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -411,7 +411,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesPropertyOK()
@@ -462,7 +462,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMinPlusOne()
@@ -483,7 +483,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxLessOne()
@@ -504,7 +504,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxBoundary()
@@ -525,7 +525,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfMinutesMaxPlusOne()
@@ -588,7 +588,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsPropertyOK()
@@ -640,7 +640,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMinPlusOne()
@@ -661,7 +661,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxLessOne()
@@ -682,7 +682,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxBoundary()
@@ -703,7 +703,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void NumberOfTextsMaxPlusOne()
@@ -767,7 +767,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -818,7 +818,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMinPlusOne()
@@ -838,7 +838,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxLessOne()
@@ -858,7 +858,7 @@ namespace PhonePalTest
                SomeCustomerNo
                 );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxBoundary()
@@ -878,7 +878,7 @@ namespace PhonePalTest
                SomeCustomerNo
                 );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PricePerMonthMaxPlusOne()
@@ -939,7 +939,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DurationPropertyOK()
@@ -991,7 +991,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DurationMinPlusOne()
@@ -1012,7 +1012,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxLessOne()
@@ -1034,7 +1034,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxBoundary()
@@ -1056,7 +1056,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DurationMaxPlusOne()
@@ -1120,7 +1120,7 @@ namespace PhonePalTest
              SomeCustomerNo
               );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void ContractNoPropertyOK()
@@ -1201,7 +1201,7 @@ namespace PhonePalTest
               SomeCustomerNo
                );
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void StartDateMinLessOne()
