@@ -1321,7 +1321,46 @@ namespace PhonePalTest
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
-       
+     [TestMethod]
+      public void TestContractNoFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the contract no
+            if (AContract.ContractNo != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestContractTypeFound()
+        {
+            //boolean to store the result of the search
+            Boolean Found = false;
+            //boolean variable to sorre the result of the searc
+            Boolean OK = true;
+            //create some test data
+            Int32 ContractNo = 1;
+            //invoke method
+            Found = AContract.Find(ContractNo);
+            //check the contract no
+            if (AContract.ContractType != "Monthly")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
 
     }
 }
