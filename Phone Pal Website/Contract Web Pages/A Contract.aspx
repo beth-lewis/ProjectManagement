@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Add A Contract.aspx.cs" Inherits="Add_A_Contract" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="A Contract.aspx.cs" Inherits="A_Contract" %>
 
 <!DOCTYPE html>
 <html>

@@ -50,8 +50,9 @@ namespace PhonePalClassLibrary
         {
             //update an existing record based on the values of ThisContract    
             //connect to the database
-            clsDataConnection DB = new clsDataConnection(); 
+            clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
+            DB.AddParameter("@ContractNo", mThisContract.ContractNo);//parameter for ContractNo
             DB.AddParameter("@ContractType", mThisContract.ContractType);//parameter for Contract Type
             DB.AddParameter("@CustomerNo", mThisContract.CustomerNo);//parameter for CustomerNo
             DB.AddParameter("@DataAllowance", mThisContract.DataAllowance);//parameter for Data Allowance
