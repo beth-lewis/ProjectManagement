@@ -45,7 +45,7 @@ public partial class Contract : System.Web.UI.Page
         //stores -1 into the session object which indicates it's a new record
         Session["ContractNo"] = -1;
         //redirects to the add contract page
-        Response.Redirect("Add A Contract.aspx");
+        Response.Redirect("A Contract.aspx");
     }
     //event handler for upgrade contract
     protected void btnUpgradeContract_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ public partial class Contract : System.Web.UI.Page
             //store the data in the session object
             Session["ContractNo"] = ContractNo;
             //redirect to upgrade contract page
-            Response.Redirect("AContract.aspx");
+            Response.Redirect("A Contract.aspx");
         }
         else//if no contract has been selected
         {

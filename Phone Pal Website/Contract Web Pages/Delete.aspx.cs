@@ -15,7 +15,7 @@ public partial class Contract_Web_Pages_Delete : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //get the number of the contract to be deleted from the session object
-        ContractNo = (Int32)Session["x"];
+        ContractNo = Convert.ToInt32(Session["ContractNo"]);
     }
 
     void DeleteContract()

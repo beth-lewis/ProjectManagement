@@ -233,12 +233,15 @@ namespace PhonePalTest
         [TestMethod]
         public void UpdateMethodOK()
         {
+           
             //create an instance of the class we want to create
             clsContractCollection AllContracts = new clsContractCollection();
             ////create the item of test data
             clsContracts TestItem = new clsContracts();
             //var to store the primary key
             Int32 PrimaryKey = 0;
+            //DateTime DateTemp;
+            //DateTemp = TestItem.StartDate;
             //set its properties
             TestItem.ContractNo = 1;
             TestItem.ContractType = "Pay As You Go";
