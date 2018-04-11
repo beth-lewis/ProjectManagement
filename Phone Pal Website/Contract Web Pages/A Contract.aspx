@@ -32,7 +32,7 @@
             left: 380px;
             z-index: 1;
             width: 160px;
-            bottom: 387px;
+            bottom: 346px;
             margin-top: 9px;
         }
         .auto-style13 {
@@ -192,7 +192,7 @@
 
                         <asp:Button ID="btnSave" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style2" Text="Save" OnClick="btnSave_Click" />
                         <asp:Button ID="btnGoBack" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style3" Text="Go Back" OnClick="btnGoBack_Click" />
-                        <asp:TextBox ID="txtPricePerMonth" runat="server" CssClass="auto-style4" Font-Bold="False" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtPricePerMonth" runat="server" CssClass="auto-style4" Font-Bold="False" TextMode="Number" Height="19px"></asp:TextBox>
                 <br />
 
                         <asp:Label ID="lblPricePerMonth" runat="server" CssClass="auto-style13" Font-Bold="True" Text="Price Per Month"></asp:Label>

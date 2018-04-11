@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 
 namespace PhonePalClassLibrary
-{
+{ 
     public class clsContractCollection
     {
+  
         //connect to the database
         clsDataConnection DB = new clsDataConnection();
         //private data member for the list
@@ -15,10 +16,12 @@ namespace PhonePalClassLibrary
         clsContracts mThisContract = new clsContracts();
         //private data member for the allContracts list
         private List<clsContracts> mAllContracts = new List<clsContracts>();
-      
+        
         public int Add()
         {
             //adds a new record to the database based on the values of mThisContract
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
             DB.AddParameter("@ContractType", mThisContract.ContractType);//parameter for Contract Type
             DB.AddParameter("@CustomerNo", mThisContract.CustomerNo);//parameter for CustomerNo
@@ -36,10 +39,9 @@ namespace PhonePalClassLibrary
 
         public void Delete()
         {
-            //deletes record point tp by thiscontract
-            //connect to database
-            clsDataConnection DB = new clsDataConnection();
             //deletes the record pointed by ThisContract
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
             //set the parameters
             DB.AddParameter("@ContractNo", mThisContract.ContractNo);
             //execute the stored procedure
@@ -48,7 +50,7 @@ namespace PhonePalClassLibrary
 
         public void Update()
         {
-            //update an existing record based on the values of ThisContract    
+            //update an existing record based on the values of ThisContract
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -69,39 +71,10 @@ namespace PhonePalClassLibrary
         //public constructor for the class        
         public clsContractCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
-            //object for data connection
-            clsDataConnection DB = new clsDataConnection();
             //execute the store procedure
             DB.Execute("sproc_tblContracts_SelectAll");
-            //get the count of the records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while (Index < RecordCount)
-            {
-                //create a blank contract 
-                clsContracts AContract = new clsContracts();
-                //read in the fields from the current record
-                AContract.ContractNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ContractNo"]);
-                AContract.ContractType = Convert.ToString(DB.DataTable.Rows[Index]["ContractType"]);
-                AContract.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
-                AContract.DataAllowance = Convert.ToString(DB.DataTable.Rows[Index]["DataAllowance"]);
-                AContract.Duration = Convert.ToString(DB.DataTable.Rows[Index]["Duration"]);
-                AContract.ManufacturerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ManufacturerNo"]);
-                AContract.NumberOfMinutes = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfMinutes"]);
-                AContract.NumberOfTexts = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfTexts"]);
-                AContract.PricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
-                AContract.StaffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
-                AContract.StartDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
-                //add the record to the private data member
-                mContractList.Add(AContract);
-                //point at the next record
-                Index++;
-
-            }
+            //populate the array list with the data table
+            PopulateArray(DB);
         }
         public int Count
         {
@@ -156,5 +129,51 @@ namespace PhonePalClassLibrary
                 mThisContract = value;
             }
         }
+
+        public void FilterByContractType(string ContractType)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the contract type parameter to the database
+            DB.AddParameter("@ContractType", ContractType);
+            //execute the stored procedure
+            DB.Execute("sproc_tblContracts_FilterByContractType");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+        public void PopulateArray(clsDataConnection DB)
+        {
+            //populates the list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear th private array list
+            mContractList = new List<clsContracts>();
+            while (Index < RecordCount)
+            {
+                //create a blank contract 
+                clsContracts AContract = new clsContracts();
+                //read in the fields from the current record
+                AContract.ContractNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ContractNo"]);
+                AContract.ContractType = Convert.ToString(DB.DataTable.Rows[Index]["ContractType"]);
+                AContract.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerNo"]);
+                AContract.DataAllowance = Convert.ToString(DB.DataTable.Rows[Index]["DataAllowance"]);
+                AContract.Duration = Convert.ToString(DB.DataTable.Rows[Index]["Duration"]);
+                AContract.ManufacturerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["ManufacturerNo"]);
+                AContract.NumberOfMinutes = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfMinutes"]);
+                AContract.NumberOfTexts = Convert.ToString(DB.DataTable.Rows[Index]["NumberOfTexts"]);
+                AContract.PricePerMonth = Convert.ToDecimal(DB.DataTable.Rows[Index]["PricePerMonth"]);
+                AContract.StaffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
+                AContract.StartDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["StartDate"]);
+                //add the record to the private data member
+                mContractList.Add(AContract);
+                //point at the next record
+                Index++;
+            }
+        }
+
     }
 }
