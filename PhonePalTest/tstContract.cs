@@ -1329,11 +1329,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the contract no
-            if (AContract.ContractNo != 1)
+            if (AContract.ContractNo != 3)
             {
                 OK = false;
             }
@@ -1349,7 +1349,7 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the contract type
@@ -1369,11 +1369,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the data allowance
-            if (AContract.DataAllowance != "6Gb")
+            if (AContract.DataAllowance != "5gb")
             {
                 OK = false;
             }
@@ -1389,11 +1389,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the duration
-            if (AContract.Duration != "1 Year")
+            if (AContract.Duration != "2 Years")
             {
                 OK = false;
             }
@@ -1409,7 +1409,7 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the Number Of Minutes
@@ -1429,11 +1429,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the Number Of Texts
-            if (AContract.NumberOfTexts != "5000 Texts")
+            if (AContract.NumberOfTexts != "Unlimited")
             {
                 OK = false;
             }
@@ -1449,11 +1449,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the price per month
-            if (AContract.PricePerMonth != 20)
+            if (AContract.PricePerMonth != 30)
             {
                 OK = false;
             }
@@ -1469,11 +1469,11 @@ namespace PhonePalTest
             //boolean variable to sorre the result of the searc
             Boolean OK = true;
             //create some test data
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke method
             Found = AContract.Find(ContractNo);
             //check the startdate
-            if (AContract.StartDate != Convert.ToDateTime("09/04/2018"))
+            if (AContract.StartDate != Convert.ToDateTime("11/04/2018"))
             {
                 OK = false;
             }

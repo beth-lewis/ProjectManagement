@@ -69,7 +69,7 @@
     <form id="form1" runat="server">
     <div id="container">
         <div id="header">
-            <table style="width:360px">
+            c<table style="width:360px">
                 <tr>
                     <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
