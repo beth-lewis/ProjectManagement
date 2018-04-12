@@ -25,7 +25,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Phone Pal Website", "..\Pho
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "51431"
+		VWDPort = "65244"
 		SlnRelativePath = "..\Phone Pal Website\"
 	EndProjectSection
 EndProject
