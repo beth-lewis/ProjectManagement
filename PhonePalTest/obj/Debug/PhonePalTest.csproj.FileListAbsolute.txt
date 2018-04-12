@@ -6,3 +6,10 @@ H:\Year 2\Project Management and Development\PhonePal\New folder\PhonePalTest\bi
 H:\Year 2\Project Management and Development\PhonePal\New folder\PhonePalTest\obj\Debug\PhonePalTest.csprojResolveAssemblyReference.cache
 H:\Year 2\Project Management and Development\PhonePal\New folder\PhonePalTest\obj\Debug\PhonePalTest.dll
 H:\Year 2\Project Management and Development\PhonePal\New folder\PhonePalTest\obj\Debug\PhonePalTest.pdb
+H:\Desktop\New folder (5)\PhonePalTest\bin\Debug\PhonePalTest.dll
+H:\Desktop\New folder (5)\PhonePalTest\bin\Debug\PhonePalTest.pdb
+H:\Desktop\New folder (5)\PhonePalTest\bin\Debug\ClassLibrary.dll
+H:\Desktop\New folder (5)\PhonePalTest\bin\Debug\ClassLibrary.pdb
+H:\Desktop\New folder (5)\PhonePalTest\obj\Debug\PhonePalTest.csprojResolveAssemblyReference.cache
+H:\Desktop\New folder (5)\PhonePalTest\obj\Debug\PhonePalTest.dll
+H:\Desktop\New folder (5)\PhonePalTest\obj\Debug\PhonePalTest.pdb

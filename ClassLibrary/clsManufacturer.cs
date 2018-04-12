@@ -12,23 +12,38 @@ namespace ClassLibrary
         public string Name { get; set; }
         public string Telephone { get; set; }
 
-        public bool Valid(string someManufacturer)
+        public string Valid(string manufacturerName,string manufacturerLocation, string yearStarted,string eMail, string telephone)
         {
-            //if the name of the country is not blank
-            if(someManufacturer != "")
-            {
-                //return true
-                return true;
-            }
-            else //else false
-            {
-                return false;
-            }
-        }
 
-        public bool Valid(object someManufacturer)
-        {
-            throw new NotImplementedException();
+            //boolean to flag that all is OK
+            string Error = "";
+           // DateTime DateTemp;
+            //if the field is blank
+            if(manufacturerName == "")
+            {
+                //flag an error
+                Error = Error + "Manufacturer name may not be blank ";
+            }
+            //if the name of the manufacturer is more than 50
+            if(manufacturerName.Length > 50)
+            {
+                //flag an error
+                Error = Error + "Manufacturer name must be less than 50 characters ";
+            }
+          /*  DateTemp = Convert.ToDateTime(yearStarted);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "the date cannot be in the past : ";
+            }
+            if(DateTemp > DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "the date cannot be in the future : ";
+            }*/
+            return Error;
+
+
         }
     }
 }

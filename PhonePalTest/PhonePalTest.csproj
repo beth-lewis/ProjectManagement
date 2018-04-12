@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Manufacturer\tstManufacturerCollection.cs" />
     <Compile Include="tstAccessory.cs" />
     <Compile Include="tstContract.cs" />
     <Compile Include="tstCustomer.cs" />
