@@ -7,10 +7,10 @@ namespace PhonePalTest
 {
     [TestClass]
     public class tstContractCollection
-    {   
+    {
         //create some test data to assign to the property
         List<clsContracts> TestList = new List<clsContracts>();
-      
+
 
 
         [TestMethod]
@@ -59,8 +59,8 @@ namespace PhonePalTest
             TestContract.StartDate = DateTime.Now.Date;
             //assign the data to the property
             AllContracts.ThisContract = TestContract;
-           //test to see that the two values are the same
-           Assert.AreEqual(AllContracts.ThisContract, TestContract);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllContracts.ThisContract, TestContract);
         }
         [TestMethod]
         public void ListAndCountOK()
@@ -119,7 +119,7 @@ namespace PhonePalTest
         [TestMethod]
         public void CountMatchesList()
         {
-      
+
             clsContractCollection Contracts = new clsContractCollection();
             //create some test to assign to the property
             //in this case the data needs to be a list of objects
@@ -155,7 +155,7 @@ namespace PhonePalTest
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 ContractNo = 1;
+            Int32 ContractNo = 3;
             //invoke the method
             Found = AContract.Find(ContractNo);
             //test to see that the result is correct 
@@ -233,7 +233,6 @@ namespace PhonePalTest
         [TestMethod]
         public void UpdateMethodOK()
         {
-           
             //create an instance of the class we want to create
             clsContractCollection AllContracts = new clsContractCollection();
             ////create the item of test data
@@ -279,6 +278,59 @@ namespace PhonePalTest
             //test to see if ThisContract matches the test data
             Assert.AreEqual(AllContracts.ThisContract, TestItem);
         }
+        [TestMethod]
+        public void FilterByContractTypeMethodOK()
+        {
+            //create an instance of the class containing unfiltered results
+            clsContractCollection AllContracts = new clsContractCollection();
+            //create an instance of the filtered data
+            clsContractCollection FilteredContracts = new clsContractCollection();
+            //apply a blank string 
+            FilteredContracts.FilterByContractType("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllContracts.Count, FilteredContracts.Count);
+        }
+        [TestMethod]
+        public void FilterByContractTypeNoneFound()
+        {
+            //create an instance of the filtered data
+            clsContractCollection FilteredContracts = new clsContractCollection();
+            //apply a contract type that doesn't exist
+            FilteredContracts.FilterByContractType("xxxxxxxx");
+            //test to see that there are are no records
+            Assert.AreEqual(0, FilteredContracts.Count);
+        }
+        [TestMethod]
+        public void FilterByContractTypeTestDataFound()
+        {
+            //create an instance of the filtered data 
+            clsContractCollection FilteredContracts = new clsContractCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a contract type that doesn't exist
+            FilteredContracts.FilterByContractType("xxx xxx");
+            //check to see that correct numbers of records are found
+            if (FilteredContracts.Count == 2)
+            {
+                //check that the first record is ID 36
+                if (FilteredContracts.ContractList[0].ContractNo != 36)
+                {
+                    OK = false;
+                }
+                //check to see that the first record is ID 37
+                if (FilteredContracts.ContractList[1].ContractNo != 37)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
+
+        }
 
     }
-}

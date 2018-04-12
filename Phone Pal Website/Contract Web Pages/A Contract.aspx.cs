@@ -14,14 +14,12 @@ public partial class A_Contract : System.Web.UI.Page
     {
         //get the number of the contract to be processed
         ContractNo = Convert.ToInt32(Session["ContractNo"]);
-        if (ContractNo != -1)
+        if (IsPostBack == false)
         {
             DisplayContractsForUpdate();
         }
 
-    } 
-        
-    
+    }
 
     protected void btnView_Click(object sender, EventArgs e)
     {
@@ -58,7 +56,7 @@ public partial class A_Contract : System.Web.UI.Page
         txtCustomerNo.Text = ContractList.ThisContract.CustomerNo.ToString();
 
 
-       
+
     }
     //function for updating records
     void Update()
@@ -159,6 +157,6 @@ public partial class A_Contract : System.Web.UI.Page
             //update the record
             Update();
         }
-       
+
     }
 }
