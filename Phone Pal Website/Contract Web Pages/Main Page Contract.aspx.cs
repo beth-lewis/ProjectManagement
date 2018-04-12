@@ -8,7 +8,8 @@ using PhonePalClassLibrary;
 
 public partial class Contract : System.Web.UI.Page
 {
-  
+    //var to store the primary key value of the record to be deleted or updated
+    Int32 ContractNo;
     //this function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -35,10 +36,7 @@ public partial class Contract : System.Web.UI.Page
         lstContracts.DataBind();
         
     }
-    protected void btnViewContract_Click(object sender, EventArgs e)
-    {
-
-    }
+ 
     //event handler for the add a Contract Button
     protected void btnAddAContract_Click(object sender, EventArgs e)
     {
@@ -50,8 +48,6 @@ public partial class Contract : System.Web.UI.Page
     //event handler for upgrade contract
     protected void btnUpgradeContract_Click(object sender, EventArgs e)
     {
-        //var to store the primary key value of recor to be edited
-        Int32 ContractNo;
         //if a record has been selected from the list
         if (lstContracts.SelectedIndex != -1)
         {
@@ -78,15 +74,13 @@ public partial class Contract : System.Web.UI.Page
 
     protected void btnDeleteContract_Click(object sender, EventArgs e)
     {
-        //var to store the primary key value of the record to be deleted
-        Int32 ContractNo;
         //if a record has been selected from the list
         if (lstContracts.SelectedIndex != -1)
         {
             //get the primary key value of the record to delete
             ContractNo = Convert.ToInt32(lstContracts.SelectedValue);
             //store the data in the session object
-            Session["x"] = ContractNo;
+            Session["ContractNo"] = ContractNo;
             //redirects to the cancel contract page
             Response.Redirect("Delete.aspx");
         }

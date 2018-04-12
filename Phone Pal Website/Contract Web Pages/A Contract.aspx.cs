@@ -17,8 +17,13 @@ public partial class A_Contract : System.Web.UI.Page
         ContractNo = Convert.ToInt32(Session["ContractNo"]);
         if (IsPostBack == false)
         {
-            DisplayContractsForUpdate();
+            if (ContractNo != -1)
+            {
+                DisplayContractsForUpdate();
+            }
         }
+            
+        
 
     }
 
@@ -35,12 +40,11 @@ public partial class A_Contract : System.Web.UI.Page
     }
     void DisplayContractsForAdding()
     {
-
+       
     }
     void DisplayContractsForUpdate()
     {
-        DateTime DateTemp;
-        DateTemp = DateTime.Now.Date;
+       
         //create an instance of the contract list
         clsContractCollection ContractList = new clsContractCollection();
         //find the record to update 
@@ -55,6 +59,7 @@ public partial class A_Contract : System.Web.UI.Page
         txtStaffNo.Text = ContractList.ThisContract.StaffNo.ToString();
         txtManufacturerNo.Text = ContractList.ThisContract.ManufacturerNo.ToString();
         txtCustomerNo.Text = ContractList.ThisContract.CustomerNo.ToString();
+        txtStartDate.Text = ContractList.ThisContract.StartDate.ToShortDateString();
 
 
 
@@ -62,8 +67,6 @@ public partial class A_Contract : System.Web.UI.Page
     //function for updating records
     void Update()
     {
-        DateTime DateTemp;
-        DateTemp = DateTime.Now.Date;
         //create an instance of the contracts 
         PhonePalClassLibrary.clsContractCollection ContractList = new PhonePalClassLibrary.clsContractCollection();
         //validate the data for the web form
@@ -74,7 +77,7 @@ public partial class A_Contract : System.Web.UI.Page
              txtNumberOfTexts.Text,
              txtPricePerMonth.Text,
              txtDuration.Text,
-             DateTemp.ToString(),
+             txtStartDate.Text,
              txtStaffNo.Text,
              txtManufacturerNo.Text,
              txtCustomerNo.Text);
@@ -92,6 +95,8 @@ public partial class A_Contract : System.Web.UI.Page
             ContractList.ThisContract.StaffNo = Convert.ToInt32(txtStaffNo.Text);
             ContractList.ThisContract.ManufacturerNo = Convert.ToInt32(txtManufacturerNo.Text);
             ContractList.ThisContract.CustomerNo = Convert.ToInt32(txtCustomerNo.Text);
+            ContractList.ThisContract.StartDate = Convert.ToDateTime(txtStartDate.Text);
+            ContractList.ThisContract.DataAllowance = txtDataAllowance.Text.ToString();
             //update the record 
             ContractList.Update();
             //redirect to our main page 
@@ -99,15 +104,14 @@ public partial class A_Contract : System.Web.UI.Page
         }
         else//if data isn't inputted correctly or missing inputs
         {
-            //report an eror
-            lblError.Text = "There were problems with the data entered" + Error;
+            //report an error
+            lblError.Text = "There were problems with the data entered" + " " + Error;
         }
     }
     //function for adding new contracts
     void Add()
     {
-        DateTime DateTemp;
-        DateTemp = DateTime.Now.Date;
+       
         //create an instance of the contracts
         PhonePalClassLibrary.clsContractCollection ContractList = new PhonePalClassLibrary.clsContractCollection();
         //validate the data on the web form
@@ -118,7 +122,7 @@ public partial class A_Contract : System.Web.UI.Page
              txtNumberOfTexts.Text,
              txtPricePerMonth.Text,
              txtDuration.Text,
-             DateTemp.ToString(),
+             txtStartDate.Text,
              txtStaffNo.Text,
              txtManufacturerNo.Text,
              txtCustomerNo.Text);
@@ -134,6 +138,8 @@ public partial class A_Contract : System.Web.UI.Page
             ContractList.ThisContract.StaffNo = Convert.ToInt32(txtStaffNo.Text);
             ContractList.ThisContract.ManufacturerNo = Convert.ToInt32(txtManufacturerNo.Text);
             ContractList.ThisContract.CustomerNo = Convert.ToInt32(txtCustomerNo.Text);
+            ContractList.ThisContract.StartDate = Convert.ToDateTime(txtStartDate.Text);
+            ContractList.ThisContract.DataAllowance = txtDataAllowance.Text.ToString();
             //add the record
             ContractList.Add();
             //redirect back to the main contract page

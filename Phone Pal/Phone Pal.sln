@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonePalTest", "..\PhonePal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonePalClassLibrary", "..\ClassLibrary\PhonePalClassLibrary.csproj", "{00CD69DD-EA31-40E1-94EB-6A5EF32AF636}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Phone Pal Website", "..\Phone Pal Website\", "{595ED680-4585-4A01-901E-0C782B247B28}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Phone Pal Website(1)", "..\Phone Pal Website\", "{595ED680-4585-4A01-901E-0C782B247B28}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		ProjectReferences = "{00cd69dd-ea31-40e1-94eb-6a5ef32af636}|ClassLibrary.dll;"

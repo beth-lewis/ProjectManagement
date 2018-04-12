@@ -9,16 +9,16 @@
         
         
         .auto-style1 {
-            height: 433px;
+            height: 613px;
         }
         
         
         .auto-style2 {
-            height: 413px;
+            height: 428px;
         }
         
         
-    </style>
+        </style>
 </head>
 
 <body>
@@ -49,21 +49,25 @@
             <div id="main" class="auto-style1">
                 <center class="auto-style2">
                         <h2>Contracts</h2>
-                    <br />
-                      <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9" Height="250px" Width="600px"></asp:ListBox>
+                      <br />
+                      
+
+                    
+                      <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9" Height="250px" Width="283px"></asp:ListBox>
+                        
        <br />
                         <br />
-                    <br />
-                    <br />
-                    <asp:Button ID="btnAddAContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnAddAContract_Click" Text="Add A Contract" Width="130px" BorderColor="#41719C" />
+                     <asp:Label ID="lblError" runat="server" CssClass="auto-style10" Font-Bold="True"></asp:Label>
+                    <br /><br /><br />
+                    <asp:Button ID="btnAddAContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnAddAContract_Click" Text="Add A Contract" Width="150px" BorderColor="#41719C" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnDeleteContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnDeleteContract_Click" Text="Delete Contract" Width="130px" BorderColor="#41719C" />
+                <asp:Button ID="btnDeleteContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnDeleteContract_Click" Text="Delete Contract" Width="150px" BorderColor="#41719C" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 <asp:Button ID="btnFindAContract" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnFindAContract_Click" Text="Find Contract" Width="130px" />
+                 <asp:Button ID="btnFindAContract" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnFindAContract_Click" Text="Find Contract" Width="150px" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnUpgradeContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnUpgradeContract_Click" Text="Upgrade Contract" Width="130px" BorderColor="#41719C" />
+                        <asp:Button ID="btnUpgradeContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnUpgradeContract_Click" Text="Upgrade Contract" Width="150px" BorderColor="#41719C" />
                     <br /><br />
-                        <asp:Label ID="lblError" runat="server" CssClass="auto-style10"></asp:Label>
+                       
                        
 
                     
