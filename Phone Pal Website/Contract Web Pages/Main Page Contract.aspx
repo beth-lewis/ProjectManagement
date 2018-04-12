@@ -6,70 +6,26 @@
     <title>Phone Pal - Contracts</title>
     <link rel="stylesheet" type="text/css" href="../StyleSheet.css" /><!--link to stlesheet-->
     <style type="text/css">
+        
+        
         .auto-style1 {
-            position: absolute;
-            top: 299px;
-            left: 810px;
-            z-index: 1;
-            height: 40px;
-            margin-top: 21px;
+            height: 433px;
         }
+        
+        
         .auto-style2 {
-            position: absolute;
-            top: 440px;
-            left: 985px;
-            z-index: 1;
-            height: 40px;
+            height: 413px;
         }
-        .auto-style3 {
-            position: absolute;
-            top: 290px;
-            left: 990px;
-            z-index: 1;
-        }
-        .auto-style4 {
-            position: absolute;
-            top: 365px;
-            left: 990px;
-            z-index: 1;
-            height: 40px;
-            margin-top: 0px;
-            bottom: 320px;
-        }
-        .auto-style6 {
-            height: 666px;
-        }
-        .auto-style7 {
-            height: 173px;
-        }
-        .auto-style8 {
-            position: absolute;
-            left: 810px;
-            z-index: 1;
-            top: 395px;
-        }
-        .auto-style9 {
-            position: absolute;
-            top: 260px;
-            left: 365px;
-            z-index: 1;
-            width: 397px;
-            height: 389px;
-        }
-        .auto-style10 {
-            position: absolute;
-            top: 545px;
-            left: 800px;
-            z-index: 1;
-        }
+        
+        
     </style>
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form id="frmPhonePal" runat="server">
     <div id="container">
         <div id="header">
-            c<table style="width:360px">
+            <table style="width:360px">
                 <tr>
                     <td><img src="../molumen_phone_icon.png" height="50" width="50" /></td>
                     <td><h1>Phone Pal</h1></td>
@@ -90,31 +46,42 @@
                 </table>
 
             </div>
-            <div id="main">
-                <center class="auto-style6">
+            <div id="main" class="auto-style1">
+                <center class="auto-style2">
+                        <h2>Contracts</h2>
+                    <br />
+                      <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9" Height="250px" Width="600px"></asp:ListBox>
+       <br />
+                        <br />
+                    <br />
+                    <br />
+                    <asp:Button ID="btnAddAContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnAddAContract_Click" Text="Add A Contract" Width="130px" BorderColor="#41719C" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnDeleteContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnDeleteContract_Click" Text="Delete Contract" Width="130px" BorderColor="#41719C" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:Button ID="btnFindAContract" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnFindAContract_Click" Text="Find Contract" Width="130px" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnUpgradeContract" runat="server" BackColor="#6FC0D3" CssClass="button" Font-Bold="True" Height="30px" OnClick="btnUpgradeContract_Click" Text="Upgrade Contract" Width="130px" BorderColor="#41719C" />
+                    <br /><br />
+                        <asp:Label ID="lblError" runat="server" CssClass="auto-style10"></asp:Label>
+                       
 
-
-                        <h2>Contracts<asp:Button ID="btnFindAContract" runat="server" BackColor="#6FC0D3" BorderColor="#41719C" CssClass="auto-style8" Font-Bold="True" Height="40px" OnClick="btnFindAContract_Click" Text="Find Contract" Width="133px" />
-                        </h2>
+                    
 
 
                     <p class="auto-style7">
-                        <asp:ListBox ID="lstContracts" runat="server" CssClass="auto-style9"></asp:ListBox>
-                        <asp:Label ID="lblError" runat="server" CssClass="auto-style10"></asp:Label>
+                      
                         </p>
 
 
                 </center>
                 <br />
                 <br />
-                <asp:Button ID="btnDeleteContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style2" Font-Bold="True" Height="40px" OnClick="btnDeleteContract_Click" Text="Delete Contract" Width="133px" BorderColor="#41719C" />
                 
             </div>
 
             <div id="footer">
-                <h5> &copy; Phone Pal<asp:Button ID="btnViewContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style1" Font-Bold="True" Height="40px" OnClick="btnViewContract_Click" Text="View Contract" Width="133px" BorderColor="#41719C" />
-                    <asp:Button ID="btnAddAContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style4" Font-Bold="True" Height="40px" OnClick="btnAddAContract_Click" Text="Add A Contract" Width="133px" BorderColor="#41719C" />
-                    <asp:Button ID="btnUpgradeContract" runat="server" BackColor="#6FC0D3" CssClass="auto-style3" Font-Bold="True" Height="40px" OnClick="btnUpgradeContract_Click" Text="Upgrade Contract" Width="133px" BorderColor="#41719C" />
+                <h5> &copy; Phone Pal
                 </h5>
             </div>
         </div>
